@@ -28,7 +28,7 @@ git submodule update --remote
 
 To understand how to add the BlinkUp SDK files to your app project, please see the relevant documentation included with each of the SDK:
 
-- [iOS SDK Installation](https://sdk/Documentation/html/index.html)
+- [iOS SDK Installation](https://github.com/electricimp/BlinkUpSDK-iOS/blob/master/sdk/Documentation/html/index.html)
 
 ## Release Notes and Known Issues ##
 
