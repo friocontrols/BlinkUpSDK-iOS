@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Text Customization Document</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Text Customization Document</h1>
+
+					<p>Almost all of the text that is displayed to the user during the BlinkUp process can be customized, by adding your own <code>.strings</code> files. There are two files which you can add to your project: <code>BlinkUpSDK.strings</code> and <code></code>BlinkUpError<code>.strings</code>. It is recommended that you copy the files from <code>BlinkUpSDK/BlinkUp/Resources</code> into your project as a starting template. The various screens of the controller are shown below, with the name of the customizable strings that can be set as properties. If you do not want to customize a specific string, you can comment it out and the default BlinkUp string will be used.</p>
+
+<p>The <code>.strings</code> files may also be localized. If your are unfamiliar with localization for iOS, please read Apple’s developer documentation. Each BlinkUp interface will first look in your app’s resources for strings in the appropriate table (<code>BlinkUpSDK</code> or <code>BlinkUpErrors</code>) and will attempt to use that value. This is the same behaviour that occurs when calling <code>NSLocalizedStringFromTable</code> in iOS. If a string is not found, the BlinkUp interface will choose the most appropriate localized string, defaulting to English if no localization is found.</p>
+
+<h3>Localization Selection</h3>
+
+<ul>
+<li>If your app provides a non-localized version of a string, it will be used in all cases.</li>
+<li>If your app provides a localized version of a string in the same localization as the user, the localized string will be used.</li>
+<li>If your app provides a localized version of a string which is not in the same localization as the user, it will fall back to a BlinkUp localized version if it exists, otherwise a default English-language BlinkUp version of the text will be used.</li>
+</ul>
+
+
+<h2>Dynamic text customization</h2>
+
+<p>If your customized text is static (it does not change between launches of the app), you should alter the <code>.strings</code> files as indicated above. If, however, you want the text to change in response to dynamic events in your application, for example to reflect a user name or location, you can add dynamic text by using string format parameters in your localized <code>.strings</code> file. The string parameter arrays are located in the <a href="../Classes/BUNetworkSelectController.html">BUNetworkSelectController stringParams</a>, <a href="../Classes/BUFlashController.html">BUFlashController stringParams</a> or <a href="../Classes/BUErrorStringParameters.html">BUErrorStringParameters</a>.</p>
+
+<p>For example, if you wish to add the username to the global footer text, you could change your English <code>BlinkUpSDK.strings</code> to contain:</p>
+
+<p><code>"GlobalFooter" = "%@ is logged in";</code></p>
+
+<p>and, for example, a French localized string file to contain:</p>
+
+<p><code>"GlobalFooter" = "nom d'utilisateur %@";</code></p>
+
+<p>Within the application, you then would set the string parameter array for the global footer:</p>
+
+<pre><code>// blinkController is a instance of BUBasicController
+// username is an NSString representing the users username
+
+blinkController.networkSelectController.stringParams.globalFooter = @[username];
+</code></pre>
+
+<p>It is also possible to use multiple parameters (with a max of 10), and to change the order in which they appear. For example, if you wanted a dynamic PreflashText:</p>
+
+<p><code>"PreflashText" = "Get ready to BlinkUp device number %@ of %@!";</code></p>
+
+<p>your code would look like:</p>
+
+<p><code>blinkController.networkSelectController.stringParams.preflashText = @[@"3", @"5"];</code></p>
+
+<p>In a different localization, if the order of the 3 and 5 should be different, you can identify a non-default paramater ordering like this:</p>
+
+<p><code>"PreflashText" = "This should be 5 %2$@ and this should be 3 %1$@""</code></p>
+
+<h1>The Main BlinkUp Screen</h1>
+
+<div style="text-align:center"><img src="InstallImages/main_screen.jpg" /></div>
+
+
+<p>The <code>GlobalFooter</code> text is read in from the localization file. The <code>globalFooterFormatParameter</code> property of the <a href="../Classes/BUBasicController.html">BUBasicController</a> can be set in order to allow dynamic addition to the text in code. The <code>GlobalFooter</code> string should be formatted in the same manner as a call to <code>stringWithformat</code>. It is recomended that you use the footer to show the state of the app for the user (such as the device they are about to configure, or their username). An example string is <code>"GlobalFooter" = "Logged in:%@";</code></p>
+
+<h1>The WiFi Screen</h1>
+
+<div style="text-align:center"><img src="InstallImages/wifi_screen.jpg" /></div>
+
+
+<h1>The WPS Screen</h1>
+
+<div style="text-align:center"><img src="InstallImages/wps_screen.jpg" /></div>
+
+
+<h1>The Pre-Flash Interstitial Screen</h1>
+
+<p>The interstitial image should be 280x380 pixels @1x, 560x760 pixels @2x (retina), and 840x1140 pixels @3x (iPhone 6 and above).</p>
+
+<div style="text-align:center"><img src="InstallImages/interstitial_screen.jpg" /></div>
+
+
+<h1>The Flash Screen</h1>
+
+<div style="text-align:center"><img src="InstallImages/flash_screen.jpg" /></div>
+
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

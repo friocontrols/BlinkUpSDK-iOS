@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BUNetworkSelectStringParameters Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/globalFooter">globalFooter</option>
+		
+		<option value="//api/name/globalTitle">globalTitle</option>
+		
+		<option value="//api/name/wifiDetailHidePassword">wifiDetailHidePassword</option>
+		
+		<option value="//api/name/wifiDetailInstructions">wifiDetailInstructions</option>
+		
+		<option value="//api/name/wifiDetailNetwork">wifiDetailNetwork</option>
+		
+		<option value="//api/name/wifiDetailNetworkPlaceholder">wifiDetailNetworkPlaceholder</option>
+		
+		<option value="//api/name/wifiDetailPassword">wifiDetailPassword</option>
+		
+		<option value="//api/name/wifiDetailPasswordPlaceholder">wifiDetailPasswordPlaceholder</option>
+		
+		<option value="//api/name/wifiDetailRememberPassword">wifiDetailRememberPassword</option>
+		
+		<option value="//api/name/wifiDetailSendBlinkUp">wifiDetailSendBlinkUp</option>
+		
+		<option value="//api/name/wifiDetailShowPassword">wifiDetailShowPassword</option>
+		
+		<option value="//api/name/wifiSettingsCancel">wifiSettingsCancel</option>
+		
+		<option value="//api/name/wifiSettingsClearWirelessConfiguration">wifiSettingsClearWirelessConfiguration</option>
+		
+		<option value="//api/name/wifiSettingsConnectADevice">wifiSettingsConnectADevice</option>
+		
+		<option value="//api/name/wifiSettingsConnectUsingWPS">wifiSettingsConnectUsingWPS</option>
+		
+		<option value="//api/name/wifiSettingsDisconnectADevice">wifiSettingsDisconnectADevice</option>
+		
+		<option value="//api/name/wifiSettingsOtherNetwork">wifiSettingsOtherNetwork</option>
+		
+		<option value="//api/name/wpsDetailInformation">wpsDetailInformation</option>
+		
+		<option value="//api/name/wpsDetailInstructions">wpsDetailInstructions</option>
+		
+		<option value="//api/name/wpsDetailSendBlinkUp">wpsDetailSendBlinkUp</option>
+		
+		<option value="//api/name/wpsDetailWPSPIN">wpsDetailWPSPIN</option>
+		
+		<option value="//api/name/wpsDetailWPSPINPlaceholder">wpsDetailWPSPINPlaceholder</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BUNetworkSelectStringParameters Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BUNetworkSelectStringParameters.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>   Runtime string parameters</p>
+
+<p>   Collection of arrays that can be used for parameters based on NSString format
+    in the BlinkUpSDK.strings localization file. See the <a href="../docs/text-customization.html">Text Customization</a> guide.</p>
+
+<pre><code>// Example .strings text
+"GlobalFooter" = @"%@ is logged in";
+
+// Example setting of parameter for the format string
+networkSelectController.stringParams.globalFooter = @[@"Joe User"];
+</code></pre>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Global parameters" name="task_Global parameters"></a>
+						<h2 class="task-title">Global parameters</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/globalTitle" title="globalTitle"></a>
+	<h3 class="method-title"><code><a href="#//api/name/globalTitle">&nbsp;&nbsp;globalTitle</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for the title that appears in the user interface</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *globalTitle</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for the title that appears in the user interface</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/globalFooter" title="globalFooter"></a>
+	<h3 class="method-title"><code><a href="#//api/name/globalFooter">&nbsp;&nbsp;globalFooter</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for the footer that appears in the user interface</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *globalFooter</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for the footer that appears in the user interface</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Wifi Details Screen parameters" name="task_Wifi Details Screen parameters"></a>
+						<h2 class="task-title">Wifi Details Screen parameters</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wifiDetailHidePassword" title="wifiDetailHidePassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailHidePassword">&nbsp;&nbsp;wifiDetailHidePassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for password hiding label on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailHidePassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for password hiding label on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailInstructions" title="wifiDetailInstructions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailInstructions">&nbsp;&nbsp;wifiDetailInstructions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for instructions text area on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailInstructions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for instructions text area on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailNetwork" title="wifiDetailNetwork"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailNetwork">&nbsp;&nbsp;wifiDetailNetwork</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for network label on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailNetwork</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for network label on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailNetworkPlaceholder" title="wifiDetailNetworkPlaceholder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailNetworkPlaceholder">&nbsp;&nbsp;wifiDetailNetworkPlaceholder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for network placeholder on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailNetworkPlaceholder</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for network placeholder on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailPassword" title="wifiDetailPassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailPassword">&nbsp;&nbsp;wifiDetailPassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for password label on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailPassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for password label on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailPasswordPlaceholder" title="wifiDetailPasswordPlaceholder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailPasswordPlaceholder">&nbsp;&nbsp;wifiDetailPasswordPlaceholder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for password placeholder on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailPasswordPlaceholder</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for password placeholder on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailRememberPassword" title="wifiDetailRememberPassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailRememberPassword">&nbsp;&nbsp;wifiDetailRememberPassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for remember password label on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailRememberPassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for remember password label on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailSendBlinkUp" title="wifiDetailSendBlinkUp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailSendBlinkUp">&nbsp;&nbsp;wifiDetailSendBlinkUp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for send BlinkUp button on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailSendBlinkUp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for send BlinkUp button on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiDetailShowPassword" title="wifiDetailShowPassword"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiDetailShowPassword">&nbsp;&nbsp;wifiDetailShowPassword</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for show password label on the Wifi details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiDetailShowPassword</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for show password label on the Wifi details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Network Settings Screen parameters" name="task_Network Settings Screen parameters"></a>
+						<h2 class="task-title">Network Settings Screen parameters</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wifiSettingsCancel" title="wifiSettingsCancel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsCancel">&nbsp;&nbsp;wifiSettingsCancel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for cancel button on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsCancel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for cancel button on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiSettingsClearWirelessConfiguration" title="wifiSettingsClearWirelessConfiguration"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsClearWirelessConfiguration">&nbsp;&nbsp;wifiSettingsClearWirelessConfiguration</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for clear wireless button on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsClearWirelessConfiguration</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for clear wireless button on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiSettingsConnectADevice" title="wifiSettingsConnectADevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsConnectADevice">&nbsp;&nbsp;wifiSettingsConnectADevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for connect a device label on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsConnectADevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for connect a device label on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiSettingsConnectUsingWPS" title="wifiSettingsConnectUsingWPS"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsConnectUsingWPS">&nbsp;&nbsp;wifiSettingsConnectUsingWPS</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for connect using wps label on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsConnectUsingWPS</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for connect using wps label on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiSettingsDisconnectADevice" title="wifiSettingsDisconnectADevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsDisconnectADevice">&nbsp;&nbsp;wifiSettingsDisconnectADevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for disconnect a device label on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsDisconnectADevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for disconnect a device label on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wifiSettingsOtherNetwork" title="wifiSettingsOtherNetwork"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wifiSettingsOtherNetwork">&nbsp;&nbsp;wifiSettingsOtherNetwork</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for other networks label on the Wifi setting screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wifiSettingsOtherNetwork</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for other networks label on the Wifi setting screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="WPS Details Screen parameters" name="task_WPS Details Screen parameters"></a>
+						<h2 class="task-title">WPS Details Screen parameters</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/wpsDetailInformation" title="wpsDetailInformation"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wpsDetailInformation">&nbsp;&nbsp;wpsDetailInformation</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for detail information text area on the WPS details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wpsDetailInformation</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for detail information text area on the WPS details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wpsDetailSendBlinkUp" title="wpsDetailSendBlinkUp"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wpsDetailSendBlinkUp">&nbsp;&nbsp;wpsDetailSendBlinkUp</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for send BlinkUp button on the WPS details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wpsDetailSendBlinkUp</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for send BlinkUp button on the WPS details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wpsDetailInstructions" title="wpsDetailInstructions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wpsDetailInstructions">&nbsp;&nbsp;wpsDetailInstructions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for instructions text area on the WPS details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wpsDetailInstructions</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for instructions text area on the WPS details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wpsDetailWPSPIN" title="wpsDetailWPSPIN"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wpsDetailWPSPIN">&nbsp;&nbsp;wpsDetailWPSPIN</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for pin label on the WPS details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wpsDetailWPSPIN</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for pin label on the WPS details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/wpsDetailWPSPINPlaceholder" title="wpsDetailWPSPINPlaceholder"></a>
+	<h3 class="method-title"><code><a href="#//api/name/wpsDetailWPSPINPlaceholder">&nbsp;&nbsp;wpsDetailWPSPINPlaceholder</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Parameters for pin placeholder on the WPS details screen</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy, nullable) NSArray *wpsDetailWPSPINPlaceholder</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Parameters for pin placeholder on the WPS details screen</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUNetworkSelectStringParameters.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

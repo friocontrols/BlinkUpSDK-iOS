@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BUBasicController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/devicePoller">devicePoller</option>
+		
+		<option value="//api/name/flashController">flashController</option>
+		
+		<option value="//api/name/networkSelectController">networkSelectController</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/forceDismissWithCompletionHandler:">- forceDismissWithCompletionHandler:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/initWithApiKey:">- initWithApiKey:</option>
+		
+		<option value="//api/name/initWithApiKey:planId:">- initWithApiKey:planId:</option>
+		
+		<option value="//api/name/presentInterfaceAnimated:resignActive:devicePollingDidComplete:">- presentInterfaceAnimated:resignActive:devicePollingDidComplete:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BUBasicController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BUBasicController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>   Use the device screen to perform a BlinkUp</p>
+
+<p>   The BUBasicController is a convienance class that handles the normal operation
+   of a BlinkUp using the standard BlinkUp user experience. A new BUBasicController
+   should be created for each BlinkUp attempt.</p>
+
+<p>   If you wish to have
+   a more customized approach please create the <a href="../Classes/BUNetworkSelectController.html">BUNetworkSelectController</a>,
+   <a href="../Classes/BUConfigId.html">BUConfigId</a>, <a href="../Classes/BUFlashController.html">BUFlashController</a>, and the <a href="../Classes/BUDevicePoller.html">BUDevicePoller</a> as individual objects.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Please use <a href="#//api/name/initWithApiKey:">initWithApiKey:</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)init</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An Exception will be thrown</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Please use <a href="#//api/name/initWithApiKey:">initWithApiKey:</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithApiKey:" title="initWithApiKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithApiKey:">&ndash;&nbsp;initWithApiKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Default Initializer</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithApiKey:(nonnull NSString *)<em>apiKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The APIKey assigned to you from Electric Imp</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An initialized BlinkUpController</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithApiKey:planId:" title="initWithApiKey:planId:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithApiKey:planId:">&ndash;&nbsp;initWithApiKey:planId:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initial with an existing planId</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (nonnull instancetype)initWithApiKey:(nonnull NSString *)<em>apiKey</em> planId:(nonnull NSString *)<em>planId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The APIKey assigned to you from Electric Imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>planId</code></th>
+						<td><p>An existing planId to use for the configuration</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>An initialized BlinkUpController</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/presentInterfaceAnimated:resignActive:devicePollingDidComplete:" title="presentInterfaceAnimated:resignActive:devicePollingDidComplete:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentInterfaceAnimated:resignActive:devicePollingDidComplete:">&ndash;&nbsp;presentInterfaceAnimated:resignActive:devicePollingDidComplete:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Show standard network selection screen</p>
+
+<p>if you want to use an existing PlanID, the BlinkUpController&rsquo;s planId property must be set.
+If planId is nil (or not set), this method will automatically fetch a new planId.
+Most developers won&rsquo;t need to reuse existing planIDs.  Please contact support if you have questions.</p>
+
+<p>If using Swift and want enumerated results, please use the Swift extension method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentInterfaceAnimated:(BOOL)<em>animated</em> resignActive:(nullable BUResignActiveBlock)<em>resignActive</em> devicePollingDidComplete:(nullable BUDevicePollingDidCompleteBlock)<em>devicePollingDidComplete</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>Should the presentation be animated</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resignActive</code></th>
+						<td><p>Block that is executed when the BlinkUp screen is
+dismissed and control is returned to the presenting screen</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>devicePollingDidComplete</code></th>
+						<td><p>Block that is executed when the device connection
+attempt is complete (success or failure)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/forceDismissWithCompletionHandler:" title="forceDismissWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/forceDismissWithCompletionHandler:">&ndash;&nbsp;forceDismissWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Dismiss the BUBasicController</p>
+
+<p>Dismiss the view controller and return control to the presenting view
+controller. If this method is called the resignActive and devicePollingDidComplete
+completion handlers will not be called. This method only needs to be called
+if you wish to force the end of the user interaction.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)forceDismissWithCompletionHandler:(void ( ^ _Nullable ) ( void ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>Block called after the view controller is dismissed</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/networkSelectController" title="networkSelectController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/networkSelectController">&nbsp;&nbsp;networkSelectController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An interface for network selection by the user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly, nonnull) BUNetworkSelectController *networkSelectController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/flashController" title="flashController"></a>
+	<h3 class="method-title"><code><a href="#//api/name/flashController">&nbsp;&nbsp;flashController</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>An interface that performs the BlinkUp flashing operations</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly, nonnull) BUFlashController *flashController</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/devicePoller" title="devicePoller"></a>
+	<h3 class="method-title"><code><a href="#//api/name/devicePoller">&nbsp;&nbsp;devicePoller</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gather device metadata after a flash</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, readonly, nullable) BUDevicePoller *devicePoller</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUBasicController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

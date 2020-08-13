@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Release Notes Document</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Release Notes Document</h1>
+
+					<h3>iOS SDK v20.0.1</h3>
+
+<ul>
+<li>Change: Electric Imp is now part of Twilio.</li>
+</ul>
+
+
+<h3>iOS SDK v20.0.0</h3>
+
+<ul>
+<li><strong>IMPORTANT</strong> Change: Built with Xcode 11
+
+<ul>
+<li><strong>Will not work with Xcode 10</strong> during an archive unless bitcode is turned off</li>
+</ul>
+</li>
+<li>Change: BlinkUp is forced to display full screen in iOS 13</li>
+<li>Change: <em><a href="../Classes/BUNetworkManager.html">BUNetworkManager</a>.currentWifiSSID()</em> will return <code>nil</code> instead of <code>Wi-Fi</code> on iOS 13</li>
+<li>Feature: Support for Dark Mode in <em><a href="../Classes/BUBasicController.html">BUBasicController</a></em></li>
+<li>Bugfix: Fixed non-active <em><a href="../Classes/BUConfigId.html">BUConfigId</a></em> when using <em><a href="../Classes/BUBasicController.html">BUBasicController</a></em> on slow network connections</li>
+</ul>
+
+
+<h3>iOS SDK v19.9.0</h3>
+
+<ul>
+<li>Change: The delay after BlinkUp completion has been reduced from approximately 1 seconds to 50ms.</li>
+<li>Change: Underlying endpoints have moved to V5</li>
+</ul>
+
+
+<h3>iOS SDK v19.8.2</h3>
+
+<ul>
+<li>Change: <em><a href="../Classes/BUSDK.html">BUSDK</a>.configure()</em> should now be called in the Application Delegate</li>
+<li>Feature: Private cloud host and SSL pinning can now be set via the SDK without needing a feature code (via <em><a href="../Classes/BUSDK.html">BUSDK</a>.configure()</em> parameters).</li>
+</ul>
+
+
+<h3>iOS SDK v19.8.1</h3>
+
+<ul>
+<li>Bufix: App may crash on rare occasions with an array out of bounds error</li>
+</ul>
+
+
+<h3>iOS SDK v19.8.0</h3>
+
+<ul>
+<li><strong>IMPORTANT</strong> 19.8.0 is a required updated. Older versions will not be able to connect to the impCloud.</li>
+<li>Change: Added support for additional SSL certificates</li>
+<li>Change: Improved the reliability of BlinkUp</li>
+<li>Bugfix: Connection failures would occur when root certificates where manually trusted</li>
+</ul>
+
+
+<h3>iOS SDK v19.7.0</h3>
+
+<ul>
+<li>Bugfix: Improved the reliability of BlinkUp on iOS 10 and iOS 11 (prevent short BlinkUp events)</li>
+<li>Change: Examples programs updated to XCode 9 and Swift 4</li>
+</ul>
+
+
+<h3>iOS SDK v19.6.0</h3>
+
+<ul>
+<li><strong>IMPORTANT</strong> Rotating an iOS device during BlinkUp can reduce the odds of success. It is strongly recommended that you ensure that the application has &ldquo;Requires full screen&rdquo; set to <code>true</code> for the application Target -> General setting. The view controller that presents BlinkUp should also disable autorotation on its own interface during the BlinkUp process by returning <code>false</code> from the <em>shouldAutorotate</em> method.</li>
+<li>Bugfix: Fixed an issue where BlinkUp flash may not be presented in iOS 10</li>
+<li>Bugfix: Improved the reliability of BlinkUp on iOS 9.3.x and iOS 10</li>
+<li>Feature: Metal is now used instead of OpenGL on eligible devices</li>
+<li>Removal: B<em>UFlashController.hideStatusBarAfterFlash</em> is no longer used. The status bar will be updated by the OS based on the <em>prefersStatusBarHidden</em> method of your view controller</li>
+</ul>
+
+
+<h3>iOS SDK v19.5.1</h3>
+
+<ul>
+<li>Bugfix: Remove warnings about &ldquo;&hellip;pcm: No such file or directory&rdquo;</li>
+</ul>
+
+
+<h3>iOS SDK v19.5.0</h3>
+
+<ul>
+<li>Feature: Allow static network addressing for capable impOS</li>
+<li>Feature: Allow network proxy for capable impOS</li>
+<li>Feature: Allow programmatic SDK version retrieval using <em>BlinkUpVersionString</em> and/or <em>BlinkUpVersionNumber</em></li>
+</ul>
+
+
+<h3>iOS SDK v19.4.0b1</h3>
+
+<ul>
+<li>Change: If you had been using the customized version of the SDK, please consult the migration guide</li>
+</ul>
+
+
+<h3>iOS SDK v19.3.1</h3>
+
+<ul>
+<li>Bugfix: The keyboard will be dismissed when transition to the BlinkUp flash</li>
+<li>Change: Change spelling of &ldquo;Response&rdquo; to &ldquo;Response&rdquo; in swift helper files</li>
+</ul>
+
+
+<h3>iOS SDK v19.3.0</h3>
+
+<ul>
+<li>Change: Interstitial and Pre-Flash Countdown can now be shown in landscape</li>
+<li>Bugfix: Fix crash when showing Notification Center during BlinkUp</li>
+<li>Bugfix: Network window may be visible after flash on iOS 9.1 devices</li>
+</ul>
+
+
+<h3>iOS SDK v19.2.1</h3>
+
+<ul>
+<li>Bugfix: Fix Xcode 7 warning when finding Dsym</li>
+<li>Bugfix: Force Bitcode to enabled</li>
+<li>Bugfix: Fix issue with Network Selection window being displayed several times</li>
+</ul>
+
+
+<h3>iOS SDK v19.2.0</h3>
+
+<ul>
+<li>Note: It is recommended to set &ldquo;Requires full screen&rdquo; in your applications &ldquo;Deployment Info&rdquo;</li>
+<li>Feature: Enable Bitcode</li>
+<li>Change: Remove support for iOS 5</li>
+<li>Bugfix: Ensure the screen does not go idle during BlinkUp</li>
+<li>Bugfix: Update BlinkUp.bundle to new iTunes Store rules</li>
+<li>Change: Error BlinkUpErrorMIMETypeInvalid changed to BlinkUpErrorServerResponseFailed</li>
+<li>Change: .Strings value for <code>BadMimeType</code> changed to <code>ServerRepondedWithError</code></li>
+</ul>
+
+
+<h3>iOS SDK v19.1.1</h3>
+
+<ul>
+<li>Feature: Added disableAudioSessionChange property to the flash controller</li>
+<li>Feature: The BlinkUp audio is now mixed with existing audio</li>
+</ul>
+
+
+<h3>iOS SDK v19.1.0</h3>
+
+<ul>
+<li>Feature: Enhanced Swift support in header files (non-null, nullable)</li>
+<li>Feature: Swift extensions for enumeration based closure parameters</li>
+</ul>
+
+
+<h3>iOS SDK v19.0.0</h3>
+
+<ul>
+<li>Change: Large changes to the API to be block/closure based</li>
+<li>Feature: New flash screen</li>
+</ul>
+
+
+<h3>iOS SDK v18.2.1</h3>
+
+<ul>
+<li>Bugfix: BlinkUp works correct when accessibility option color invert it turned on.</li>
+<li>Feature: Allow screen brightness to be changed for flashing.</li>
+<li>Feature: Improved support for iPhone 6/6+</li>
+<li>Change: Default screen brightness during flash set to 0.8</li>
+<li>Bugfix: Allow UTF8 characters in SSID and Password</li>
+<li>Change: Additional API endpoint security</li>
+</ul>
+
+
+<h3>iOS SDK v18.2.0</h3>
+
+<ul>
+<li>Feature: The SDK can be used for configuring a device using an external (non-BlinkUp) method</li>
+<li>Feature: Allow settings of <em>preflashcountdown</em> from 3-10 seconds</li>
+<li>Change: Changed Error codes and domain. Please consult the <a href="Version-Migration.html">Version Migration Document</a></li>
+<li>Bugfix: Fix issue that may cause app to crash if flash is interrupted</li>
+<li>Bugfix: Fix issue where app may crash if visible view controller is retrieved immediately after flash</li>
+</ul>
+
+
+<h3>iOS SDK v18.1.0</h3>
+
+<ul>
+<li>Feature: Allow settings of <em>preflashcountdown</em> from 3-5 seconds</li>
+</ul>
+
+
+<h3>iOS SDK v18.0.2</h3>
+
+<ul>
+<li>Feature: Allow user to view wifi password while entering it</li>
+<li>Bug Fix: Fixed issue when using -all_load</li>
+</ul>
+
+
+<h3>iOS SDK v18.0.1</h3>
+
+<ul>
+<li>Feature: 64-bit support</li>
+</ul>
+
+
+<h3>iOS SDK v18.0</h3>
+
+<ul>
+<li>Feature: Support for localization / customization of BlinkUp text through .string files (please read the <a href="Text-Customization.html">Text Customization document</a></li>
+<li>Feature: A new property called <em>stringParams</em> on BlinkUpController that allows for dynamic addition to formatted strings in localized .string files</li>
+<li>Feature: <a href="Version-Migration.html">Version Migration</a> guide for helping to upgrade between versions</li>
+<li>Change: Moved textual customization to localization files</li>
+<li>Change: Changed to an embedded framework from a standard framework</li>
+<li>Change: Removed deprecated functions</li>
+</ul>
+
+
+<h3>iOS SDK v17.5.2</h3>
+
+<ul>
+<li>Bug Fix: Increased reliability of BlinkUp on iPhone 4 with iOS 7</li>
+</ul>
+
+
+<h3>iOS SDK v17.5.1</h3>
+
+<ul>
+<li>Bug Fix: <em>tintColor</em> property of the BlinkUp is now set based on the front-most view shown before BlinkUp</li>
+<li>Bug Fix: status bar will now appear on the BlinkUp screen if the <em>hideStatusBar</em> property is set to <code>false</code> (default)</li>
+</ul>
+
+
+<h3>iOS SDK v17.5</h3>
+
+<ul>
+<li>Feature: Added an <em>agentUrlTimeout</em> property to control timeout when retrieving the agent URL</li>
+<li>Change: <em>blinkUp:statusVerfied:agentUrl:impeeId:error</em> will no longer be called continuously with nil values when retrieving the agent URL</li>
+</ul>
+
+
+<h3>iOS SDK v17.4.1</h3>
+
+<ul>
+<li>Feature: Added <a href="../docs/FAQ.html">FAQ</a> to address many common questions</li>
+<li>Feature: Added the ability to manually close BlinkUp in app failure cases</li>
+<li>Change: Built with XCode 5 and iOS 7</li>
+<li>Bug Fix: Resolved issue of brightness occasionally changing during BlinkUp</li>
+<li>Bug Fix: Resolved an issue where non-BlinkUp screens appeared frozen</li>
+</ul>
+
+
+<h3>iOS SDK v17.4</h3>
+
+<ul>
+<li>Feature: The build should be iOS 7 compatible (based on preview 6)</li>
+<li>Feature: Added a property to set the button text on the interstitial page</li>
+<li>Change: Deprecated <em>resendLastBlinkUp</em> method</li>
+<li>Change: Changed location and size of the global footer text property</li>
+<li>Bug Fix: When using advanced mode in landscape, text would appear off screen</li>
+<li>Bug Fix: iOS 7 text alignment changes for text in table cells</li>
+<li>Bug Fix: Preflash text changes would persist between the creation of multiple BlinkUpController instances</li>
+</ul>
+
+
+<h3>iOS SDK v17.3</h3>
+
+<ul>
+<li>Feature: Added a property for the desired status bar state</li>
+<li>Feature: Added the ability to customize the ‘cancel’ button on the presentation page</li>
+<li>Feature: Added a delegate method that is called when the BlinkUp exits via the cancel button</li>
+<li>Feature: Added a property for additional customization text at the bottom of each view</li>
+<li>Bug Fix: Minor bug fixes</li>
+</ul>
+
+
+<h3>iOS SDK v17.2</h3>
+
+<ul>
+<li>Feature: Added parameter to BlinkUp delegate method to return <em>impeeId</em></li>
+</ul>
+
+
+<h3>iOS SDK v17.1.2</h3>
+
+<ul>
+<li>Bug Fix: 17.1.1 was released with a constant <em>planId</em> causing BlinkUp failure</li>
+</ul>
+
+
+<h3>iOS SDK v17.1.1</h3>
+
+<ul>
+<li>Bug Fix: BlinkUp would fail occasionally</li>
+</ul>
+
+
+<h3>iOS SDK v17.1</h3>
+
+<ul>
+<li>Moved <em>currentWifi</em> settings method from <em>BlinkUpController</em> to <em><a href="../Classes/BUNetworkManager.html">BUNetworkManager</a></em> class</li>
+<li>Introduced three new classes for network configuration managements:
+
+<ul>
+<li><em><a href="../Classes/BUNetworkManager.html">BUNetworkManager</a></em> - used to retrieve network configuration data</li>
+<li><em><a href="../Classes/BUWPSConfig.html">BUWPSConfig</a></em> - used for WPS configurations</li>
+<li><em><a href="../Classes/BUWifiConfig.html">BUWifiConfig</a></em> - used for wifi configurations and saving ssid/password pairs</li>
+</ul>
+</li>
+<li>Minor user interaction changes for standard BlinkUp process</li>
+<li>Deprecated two methods used for advanced UI flashing</li>
+<li>Allowed the <em>planId</em> property to be set for advanced customization</li>
+</ul>
+
+
+<h3>iOS SDK v17</h3>
+
+<ul>
+<li>Fixed bug using advanced custom UI (imps would not BlinkUp)</li>
+</ul>
+
+
+<h3>iOS SDK v16</h3>
+
+<ul>
+<li>Fixed spelling issue of <em>interstitialImage</em> property</li>
+<li><em>blinkup:keyValidated:error</em> now called on both successful and unsuccessful key validation</li>
+<li>Added class method <em>currentWifiSSID</em> which returns the WiFi network the iOS device is connected to</li>
+</ul>
+
+
+<h3>iOS SDK v15</h3>
+
+<ul>
+<li>New low-level API to enable custom skinned BlinkUp apps.</li>
+</ul>
+
+
+<h3>iOS SDK v14</h3>
+
+<ul>
+<li>Refactor of <em>BlinkUpControllerDelegate</em> methods</li>
+<li>Fix memory leak</li>
+<li>Fix crash when interrupting BlinkUp</li>
+<li>Stability bug fixes</li>
+</ul>
+
+
+<h3>iOS SDK v13</h3>
+
+<ul>
+<li>UI tweaks</li>
+<li>UI bug fixes</li>
+</ul>
+
+
+<h3>iOS SDK v12</h3>
+
+<ul>
+<li>Added option to show an interstitial view before BlinkUp</li>
+<li>Tweaking brightness settings</li>
+</ul>
+
+
+<h3>iOS SDK v11</h3>
+
+<ul>
+<li>Added properties to allow customization of most text in the UI</li>
+</ul>
+
+
+<h3>iOS SDK v10</h3>
+
+<ul>
+<li>Fixed UI regression bug with SDK v9</li>
+</ul>
+
+
+<h3>iOS SDK v9</h3>
+
+<ul>
+<li>Better support for weak or high latency internet connections:
+
+<ul>
+<li>Improved error handling</li>
+<li>Longer timeouts</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>iOS SDK v8</h3>
+
+<ul>
+<li>Fixed crashing bugs related to saving passwords</li>
+</ul>
+
+
+<h3>iOS SDK v7</h3>
+
+<ul>
+<li>API enhancements
+
+<ul>
+<li>Support for canceling verification polling</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>iOS SDK v6</h3>
+
+<ul>
+<li>API enhancements
+
+<ul>
+<li>support for resending and clearing personal data</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>iOS SDK v5</h3>
+
+<ul>
+<li>API, delegate changes:
+
+<ul>
+<li>slight refactor of delegate callbacks</li>
+<li>expose Plan ID</li>
+</ul>
+</li>
+<li>Improved error handling</li>
+</ul>
+
+
+<h3>iOS SDK v4</h3>
+
+<ul>
+<li>API, delegate changes:
+
+<ul>
+<li>Agent URL support</li>
+</ul>
+</li>
+<li>iPad support</li>
+</ul>
+
+
+<h3>iOS SDK v3</h3>
+
+<ul>
+<li>Initial Release</li>
+</ul>
+
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

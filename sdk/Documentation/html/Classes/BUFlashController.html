@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BUFlashController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/disableAudioSessionChange">disableAudioSessionChange</option>
+		
+		<option value="//api/name/features">features</option>
+		
+		<option value="//api/name/hideStatusBarAfterFlash">hideStatusBarAfterFlash</option>
+		
+		<option value="//api/name/interstitialImage">interstitialImage</option>
+		
+		<option value="//api/name/preFlashCountdownTime">preFlashCountdownTime</option>
+		
+		<option value="//api/name/screenBrightness">screenBrightness</option>
+		
+		<option value="//api/name/stringParams">stringParams</option>
+		
+		<option value="//api/name/torchOnFlashComplete">torchOnFlashComplete</option>
+		
+		<option value="//api/name/vibrateOnFlashComplete">vibrateOnFlashComplete</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/presentFlashWithNetworkConfig:configId:animated:resignActive:">- presentFlashWithNetworkConfig:configId:animated:resignActive:</option>
+		
+		<option value="//api/name/setFeature:object:error:">- setFeature:object:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BUFlashController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BUFlashController.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Perform a BlinkUp using screen flashes</p>
+
+<p>The flash controller is used to relay the BlinkUp information to the
+device using screen flashes.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/presentFlashWithNetworkConfig:configId:animated:resignActive:" title="presentFlashWithNetworkConfig:configId:animated:resignActive:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentFlashWithNetworkConfig:configId:animated:resignActive:">&ndash;&nbsp;presentFlashWithNetworkConfig:configId:animated:resignActive:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Perform a BlinkUp</p>
+
+<p>If using Swift and want enumerated results, please use the Swift extension method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)presentFlashWithNetworkConfig:(nonnull BUNetworkConfig *)<em>networkConfig</em> configId:(nullable BUConfigId *)<em>configId</em> animated:(BOOL)<em>animated</em> resignActive:(nullable FlashResignActiveBlock)<em>resignActive</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>networkConfig</code></th>
+						<td><p>The WifiConfig, WpsConfig, or ClearConfig that is to
+be performed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>configId</code></th>
+						<td><p>The single use configId for this flashing session. This
+can be nil in the case of clearing a device</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>animated</code></th>
+						<td><p>Should the presentation be animated</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>resignActive</code></th>
+						<td><p>Block that is executed when the BlinkUp screen is
+dismissed and control is returned to the presenting screen</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/preFlashCountdownTime" title="preFlashCountdownTime"></a>
+	<h3 class="method-title"><code><a href="#//api/name/preFlashCountdownTime">&nbsp;&nbsp;preFlashCountdownTime</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Seconds before BlinkUp begins</p>
+
+<p>Before the BlinkUp flashes occur there is a countdown to allow the user to
+prepare the device. The preFlashCountdownTime is the number of seconds that
+the countdown occurs for. The default is 3 seconds. This property cannot be
+set lower than 3 seconds, and not more than 10.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger preFlashCountdownTime</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/interstitialImage" title="interstitialImage"></a>
+	<h3 class="method-title"><code><a href="#//api/name/interstitialImage">&nbsp;&nbsp;interstitialImage</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Pre-flash interstitial (optional)</p>
+
+<p>Suggested iPhone image size of 280x380 pixels \@1x and 560x760 pixels \@2x (retina)
+The image will be resized to AspectFit the area up to its instrinsic size
+If you are supporting iOS 8+ you can utilize Image Asset Size Classes to
+automatically choose an appropriate image for the size class</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong, nullable) UIImage *interstitialImage</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/screenBrightness" title="screenBrightness"></a>
+	<h3 class="method-title"><code><a href="#//api/name/screenBrightness">&nbsp;&nbsp;screenBrightness</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Brightness of the screen during the flash</p>
+
+<p>A value from 0 &hellip; 1 indicating brightness of the screen from 0 (darkest)
+to 1 (brightest). If your sensor is running hot, you can lower this number</p>
+
+<p>Default value is 0.8</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) float screenBrightness</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringParams" title="stringParams"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringParams">&nbsp;&nbsp;stringParams</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>List of strings that can be customized</p>
+
+<p>On occasion it may be useful to change or append to it additional information about the
+state of the application for the user (such as the device they are about to BlinkUp,
+or their username). By adding objects into the various stringParams arrays it is possible
+to inject dynamic content using standard stringWithFormat notation in the localized file string
+for example &ldquo;Now connecting device %\@&rdquo; (remove the backslash if reading source)</p>
+
+<p>Most of these strings can also be modified in the localization file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly, strong, nonnull) BUFlashStringParameters *stringParams</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hideStatusBarAfterFlash" title="hideStatusBarAfterFlash"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hideStatusBarAfterFlash">&nbsp;&nbsp;hideStatusBarAfterFlash</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If set to true, the status bar will be hidden after the Flash completes
+This method is now deprecated and does not affect the status bar (as of 19.6.0).
+Please use prefersStatusBarHidden on your view controller.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL hideStatusBarAfterFlash</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If set to true, the status bar will be hidden after the Flash completes
+This method is now deprecated and does not affect the status bar (as of 19.6.0).
+Please use prefersStatusBarHidden on your view controller.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableAudioSessionChange" title="disableAudioSessionChange"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableAudioSessionChange">&nbsp;&nbsp;disableAudioSessionChange</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>During the BlinkUp process the AVAudioSession category is set to AVAudioSessionCategoryAmbient
+If your application already sets the AVAudioSession category, setting this propery
+to true will disable the AVAudioSession category change and activation.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL disableAudioSessionChange</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>During the BlinkUp process the AVAudioSession category is set to AVAudioSessionCategoryAmbient
+If your application already sets the AVAudioSession category, setting this propery
+to true will disable the AVAudioSession category change and activation.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/vibrateOnFlashComplete" title="vibrateOnFlashComplete"></a>
+	<h3 class="method-title"><code><a href="#//api/name/vibrateOnFlashComplete">&nbsp;&nbsp;vibrateOnFlashComplete</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When set to true, the phone will vibrate (if capable) once the flash has completed
+Defaults to false</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL vibrateOnFlashComplete</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When set to true, the phone will vibrate (if capable) once the flash has completed
+Defaults to false</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/torchOnFlashComplete" title="torchOnFlashComplete"></a>
+	<h3 class="method-title"><code><a href="#//api/name/torchOnFlashComplete">&nbsp;&nbsp;torchOnFlashComplete</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>When set to true, the LED torch (if cabable) will be turned on briefly once the flash process is complete.
+Defaults to false</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL torchOnFlashComplete</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>When set to true, the LED torch (if cabable) will be turned on briefly once the flash process is complete.
+Defaults to false</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setFeature:object:error:" title="setFeature:object:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setFeature:object:error:">&ndash;&nbsp;setFeature:object:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set an extra feature</p>
+
+<p>On occasion an extra feature needs to be set. The special feature is set by featureName and value.
+In order to use these options, the feature must first be enabled by the <a href="../Classes/BUSDK.html">BUSDK</a> class.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (BOOL)setFeature:(nonnull NSString *)<em>featureName</em> object:(nullable NSObject *)<em>object</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>featureName</code></th>
+						<td><p>String representing the feature to set</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>object</code></th>
+						<td><p>The value of the feature. This must be of the proper type.
+A value of nil will unset the value</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A non-nil value if an issue was encountered while setting the feature</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/features" title="features"></a>
+	<h3 class="method-title"><code><a href="#//api/name/features">&nbsp;&nbsp;features</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Advanced features that are active</p>
+
+<p>The features dictionaries holds the current list advanced features that are active</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy, nonatomic, nonnull) NSDictionary *features</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUFlashController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

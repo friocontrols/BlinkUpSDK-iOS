@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Version Migration Document</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Version Migration Document</h1>
+
+					<h1>Migration Guide</h1>
+
+<p>This document can be used to help upgrade your project from a previous version of BlinkUp.</p>
+
+<h2>Upgrading to 20.0.0</h2>
+
+<ul>
+<li>The combination of XCode 11 and iOS 13 resulted in a change to the default view controller presentation logic by Apple. When compiling with XCode 11, BlinkUp SDK version 20.0.0 or higher must be used. If you have not yet upgraded to XCode 11, SDK 19.9.0 (now deprecated) should be used until you can make the upgrade.</li>
+</ul>
+
+
+<h2>Upgrading 19.8.1 to 19.8.2</h2>
+
+<ul>
+<li>The class <em>BUSDKFeatures</em> has been renamed to <em><a href="../Classes/BUSDK.html">BUSDK</a></em></li>
+<li>The class methods that were available in <em>BUSDKFeatures</em> can now be set using one of the <a href="../Classes/BUSDK.html#//api/name/configure">[BUSDK configure]</a>` methods.</li>
+</ul>
+
+
+<h2>Upgrading 19.7.0 to 19.7.1</h2>
+
+<ul>
+<li>The property <em>anchorCertCN</em> in <em>BUSDKFeatures</em> and been changed to return arrays and has been renamed <em>anchorCertCNs</em></li>
+<li>The class method <code>[BUSDKFeatures setPrivateCloudHost:anchorCertCN:]</code> has been renamed <code>[BUSDKFeatures setPrivateCloudHost:anchorCertCNs:]</code> and now accepts an array of anchor certificates common names.</li>
+</ul>
+
+
+<h2>Upgrading 19.4.0 to 19.6.0</h2>
+
+<ul>
+<li>Ensure that your application has “Requires full screen” set to true for the application Target -> General setting.</li>
+<li>The view controller that presents the BlinkUp, the RootViewController, and any container controllers (such as <em>UINavigationController</em>, <em>UISplitViewController</em>, etc) should implement the <em>shouldAutorotate</em> method and return the value acquired from <code>[BUHelper shouldAutorotate]</code>. If the interface is rotated while the BlinkUp interface is presented the status bar and or presenting interface may become out of sync with the device orientation. To counteract this issue, the presenting view controller can call the <em>BUHelper</em> method <em>fixRotationForViewController:</em> after the flash process has completed.</li>
+<li>During the flash process the status bar may or may not appear. If the application’s info.plist has “View controller-based status bar appearance” set to <code>YES</code>, the status bar will not be visible, otherwise it will use the preference of your application.</li>
+<li>Remove references to <code>[BUFlashController hideStatusBarAfterFlash]</code></li>
+</ul>
+
+
+<h2>Upgrading 19.2.0 to 19.4.0</h2>
+
+<ul>
+<li>If you previously used the customized version of the SDK, please consult with support for the new documentation on using custom SDK features.</li>
+</ul>
+
+
+<h2>Upgrading 19.1.1 to 19.2.0</h2>
+
+<ul>
+<li>Change any references of <em>BlinkUpErrorMIMETypeInvalid</em> to <em>BlinkUpErrorServerResponseFailed</em></li>
+<li>Update the BlinkUp.bundle in your application by overwriting the old bundle in your app</li>
+<li>If you have customized the error messages using a .strings file, update any references of <em>BadMimeType</em> to <em>ServerRespondedWithError</em></li>
+</ul>
+
+
+<h2>Upgrading 18.2 to 19.0</h2>
+
+<p>Version 19 of the SDK is quite different from 18. The API is now no longer delegate-based but block-based. The old BlinkUpController class has been broken into several smaller operation-specific classes. Developers who were previously using the <em>standard</em> BlinkUp method can now use the <em>basic</em> BlinkUp method via the <a href="../Classes/BUBasicController.html">BUBasicController</a>. If you use the advanced BlinkUp methods, you will have to invest more time in learning about the new workflow.</p>
+
+<p>It is also important to note that errors will no longer be automatically propagated to the user interface via an alert view. It is now your responsibility to catch any errors and inform the user of the issue. The error messages can be customized in the same way as SDK 18 via <a href="Text-Customization.html"><code>.strings</code></a> properties.</p>
+
+<h2>Upgrading 18.0 to 18.2</h2>
+
+<h3>Error codes</h3>
+
+<p>Error codes were changed and preference was given to enumerations in <code>BUErrors.h</code>. The error domain has all errors changed to the value provided in the string <em>BlinkUpErrorDomain</em>.</p>
+
+<p>The following codes have been changed:</p>
+
+<ul>
+<li>1387915570 -> BlinkUpErrorNetworkError</li>
+<li>1465029864 -> BlinkUpErrorMIMETypeInvalid</li>
+<li>16913060 -> BlinkUpErrorStatusUpdateTimedOut</li>
+<li>263060095 -> This error has been removed</li>
+<li>263760095 -> BlinkUpErrorPasswordAlreadySaved</li>
+<li>3359695 -> BlinkUpErrorSetupTokenInvalid</li>
+<li>3359696 -> BlinkUpErrorPlanIDInvalid</li>
+<li>3359697 -> This error has been removed</li>
+<li>3359698 -> BlinkUpErrorFlashPacketInvalid</li>
+<li>3447470 -> BlinkUpErrorSetupTokenRetrievalFailed</li>
+<li>3447471 -> BlinkUpErrorPlanIDRetrievalFailed</li>
+<li>648572891 -> BlinkUpErrorObjCFlagNotSet</li>
+<li>774633765 -> BlinkUpErrorPasswordSaveFailed</li>
+<li>827992382 -> BlinkUpErrorBundleNotCopied</li>
+<li>854070108 -> BlinkUpErrorSetupTokenInvalid</li>
+<li>859744 -> BlinkUpErrorSetupTokenInvalid</li>
+<li>859745 -> BlinkUpErrorPlanIDInvalid</li>
+<li>959744 -> BlinkUpErrorSetupTokenInvalid</li>
+<li>959745 -> BlinkUpErrorPlanIDInvalid</li>
+<li>859747 -> BlinkUpErrorSSIDNotSet</li>
+</ul>
+
+
+<h3>BlinkUpController initialization</h3>
+
+<p>The <em>init</em> method has been replaced by the <em>initWithAPI</em> method.</p>
+
+<h3><em>presentWifiSettingsWithDelegate:APIKey:animated:</em></h3>
+
+<ul>
+<li>Modified to <em>presentStandardInterfaceAnimated:</em></li>
+<li>The <em>APIKey</em> property has been removed and should be set when the <em>BlinkUpController</em> is initialized</li>
+<li>The <em>Delegate</em> property has been removed and should be set when the <em>BlinkUpController</em> is initialized</li>
+</ul>
+
+
+<h3><em>acquireSetupTokenWithAPIKey:completionHandler:</em></h3>
+
+<p>The <em>APIKey</em> property has been removed and is not set when the <em>BlinkUpController</em> is initialized</p>
+
+<h3><em>presentFlashWithDelegate:wifiConfig:APIKey:animated:</em></h3>
+
+<ul>
+<li>Modified to <em>presentFlashWithWifiConfig:animated:</em></li>
+<li>The <em>APIKey</em> property has been removed and should be set when the BlinkUpController is initialized</li>
+<li>The <em>Delegate</em> property has been removed and should be set when the BlinkUpController is initialized</li>
+</ul>
+
+
+<h3><em>presentFlashWithDelegate:wpsConfig:APIKey:animated:</em></h3>
+
+<ul>
+<li>Modified to <em>presentFlashWithWpsConfig:animated:</em></li>
+<li>The <em>APIKey</em> property has been removed and should be set when the <em>BlinkUpController</em> is initialized</li>
+<li>The <em>Delegate</em> property has been removed and should be set when the <em>BlinkUpController</em> is initialized</li>
+</ul>
+
+
+<h3><em>presentClearDeviceFlashWithDelegate:animated:</em></h3>
+
+<ul>
+<li>Modified to <em>presentClearDeviceFlashAnimated:</em></li>
+<li>The <em>Delegate</em> property has been removed and should be set when the <em>BlinkUpController</em> is initialized</li>
+</ul>
+
+
+<h2>Upgrading from 17.5.x to 18.0</h2>
+
+<h3>To Convert to the embedded framework</h3>
+
+<ul>
+<li>Remove <code>BlinkUp.framework</code> from your project</li>
+<li>Copy <code>BlinkUp.embeddedframework</code> into your project. This will copy the framework and the resources bundle into your project</li>
+<li>In your project’s build settings (or application target) add <code>-ObjC</code> to <code>other linker flags</code> if it does not already exist</li>
+</ul>
+
+
+<h3>Localization</h3>
+
+<p>If you are using custom text, it should be moved from inside your application into a file named <code>BlinkUpSDK.strings</code>. The name of the string to customize will be the name of the property that you used previously, however, you will have to capitalize the first character.</p>
+
+<h4>String parameters</h4>
+
+<p>Dynamic strings can be added to your custom text at runtime by using string formatting. Please see <a href="Text-Customization.html">Text Customization</a> fore more information.</p>
+
+<h3>Method removal <em>presentWifi:planId:</em></h3>
+
+<p>This method was removed. If you previously used it, please set the Plan ID via the <em>planId</em> property of the BlinkUpController before calling the <em>present&hellip;</em> method:</p>
+
+<pre><code>- (NSError *)presentWifiSettingsWithDelegate:(NSObject &lt;BlinkUpDelegate&gt; *)delegate
+                                    APIKey:(NSString *)apiKey
+                                    planId:(NSString *)planId
+                                animated:(BOOL)animated;
+</code></pre>
+
+<h3>Removal of Deprecated methods</h3>
+
+<p>The following methods and properties were phased out and have been discontinued. Please update to the newer methods and properties.</p>
+
+<pre><code>// A convenience method to resend the most recent BlinkUp.  Does nothing if no recent flash
+// This method has lots of ambiguity built in (please remove it from your UI flow)
+//  and instead present the standard UI again.
+
+- (void)resendLastBlinkUp __deprecated;
+
+
+//This method has moved to the BlinkUpWifiSettings class
+
++ (NSString *) currentWifiSSID __deprecated;
+
+// The property name was misspelled. Please use the new property interstitialImage
+
+@property (nonatomic, strong) UIImage *interstialImage __deprecated;
+
+//This method has been replaced with presentFlashWithDelegate:wifiConfig:APIKey:animated:(BOOL)animated;
+
+- (NSError *)presentFlashWithDelegate:(NSObject &lt;BlinkUpDelegate&gt; *)delegate
+            SSID:(NSString *)ssid
+            password:(NSString *)password
+            APIKey:(NSString *)apiKey
+            animated:(BOOL)animated __deprecated;
+
+//This method has been replaced with presentFlashWithDelegate:wpsConfig:APIKey:animated:(BOOL)animated;
+
+- (NSError *)presentFlashWithDelegate:(NSObject &lt;BlinkUpDelegate&gt; *)delegate
+            WPSPin:(NSString *)pin
+            APIKey:(NSString *)apiKey
+            animated:(BOOL)animated __deprecated;
+</code></pre>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

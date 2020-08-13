@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BlinkUpError Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BlinkUpError Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>BUErrors.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">BlinkUpError</h3>
+                    
+					
+					<div class="section section-overview">
+                        <p>Possible error codes</p>
+
+<p>Please use the enumerations for error matching.
+The comment string listed after each error is the .string key for the
+NSLocalizedDescription of the error if you would like to override the message
+Conversion from older error codes is provided in the <a href="../docs/Version-Migration.html">Migration documentation</a>
+that can be found with the SDK</p>
+					</div>
+					
+					
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, BlinkUpError ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorNetworkError</a> = 10,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorFlashPacketInvalid</a> = 20,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorPasswordAlreadySaved</a> = 51,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorPlanIDInvalid</a> = 30,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorPlanIDRetrievalFailed</a> = 31,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorSetupTokenInvalid</a> = 41,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorSetupTokenRetrievalFailed</a> = 42,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorSSIDNotSet</a> = 60,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorServerResponseFailed</a> = 80,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorPasswordSaveFailed</a> = 52,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorBundleNotCopied</a> = 110,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorObjCFlagNotSet</a> = 111,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorConfigIdIsNil</a> = 112,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorConfigIdIsNotActive</a> = 113,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorApiKeyIsNil</a> = 114,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorApiKeyIsToShort</a> = 115,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorFeatureNameInvalid</a> = 300,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorFeatureNotEnabled</a> = 301,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BlinkUpErrorFeatureObjectInvalid</a> = 302,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="BlinkUpErrorNetworkError"></a><code>BlinkUpErrorNetworkError</code></dt>
+<dd>
+
+
+<p>NetworkErrorDuringImpPol</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorFlashPacketInvalid"></a><code>BlinkUpErrorFlashPacketInvalid</code></dt>
+<dd>
+
+
+<p>BadFlashPacket</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorPasswordAlreadySaved"></a><code>BlinkUpErrorPasswordAlreadySaved</code></dt>
+<dd>
+
+
+<p>SaveWifiConfigPasswordError</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorPlanIDInvalid"></a><code>BlinkUpErrorPlanIDInvalid</code></dt>
+<dd>
+
+
+<p>BadPlanId</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorPlanIDRetrievalFailed"></a><code>BlinkUpErrorPlanIDRetrievalFailed</code></dt>
+<dd>
+
+
+<p>FailedGettingPlanIdFromServer</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorSetupTokenInvalid"></a><code>BlinkUpErrorSetupTokenInvalid</code></dt>
+<dd>
+
+
+<p>BadSetupToken</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorSetupTokenRetrievalFailed"></a><code>BlinkUpErrorSetupTokenRetrievalFailed</code></dt>
+<dd>
+
+
+<p>SetupTokenFailure</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorSSIDNotSet"></a><code>BlinkUpErrorSSIDNotSet</code></dt>
+<dd>
+
+
+<p>EmptySsid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorServerResponseFailed"></a><code>BlinkUpErrorServerResponseFailed</code></dt>
+<dd>
+
+
+<p>ServerRepondedWithError</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorPasswordSaveFailed"></a><code>BlinkUpErrorPasswordSaveFailed</code></dt>
+<dd>
+
+
+<p>Security issue when saving password</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorBundleNotCopied"></a><code>BlinkUpErrorBundleNotCopied</code></dt>
+<dd>
+
+
+<p>The BlinkUp.bundle was not included in your target</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorObjCFlagNotSet"></a><code>BlinkUpErrorObjCFlagNotSet</code></dt>
+<dd>
+
+
+<p>The ObjC flag was not set in your project</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorConfigIdIsNil"></a><code>BlinkUpErrorConfigIdIsNil</code></dt>
+<dd>
+
+
+<p>A configId was not passed in to the flash controller</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorConfigIdIsNotActive"></a><code>BlinkUpErrorConfigIdIsNotActive</code></dt>
+<dd>
+
+
+<p>A non-active configId was passed in to the flash controller</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorApiKeyIsNil"></a><code>BlinkUpErrorApiKeyIsNil</code></dt>
+<dd>
+
+
+<p>The ApiKey cannot be nil</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorApiKeyIsToShort"></a><code>BlinkUpErrorApiKeyIsToShort</code></dt>
+<dd>
+
+
+<p>The ApiKey is not long enough</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorFeatureNameInvalid"></a><code>BlinkUpErrorFeatureNameInvalid</code></dt>
+<dd>
+
+
+<p>The Feature Name was not valid</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorFeatureNotEnabled"></a><code>BlinkUpErrorFeatureNotEnabled</code></dt>
+<dd>
+
+
+<p>The Feature was not enabled</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BlinkUpErrorFeatureObjectInvalid"></a><code>BlinkUpErrorFeatureObjectInvalid</code></dt>
+<dd>
+
+
+<p>The Feature Object was of an invalid type</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BUErrors.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">BUErrors.h</code></p>
+                    </div>
+                    
+                    
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

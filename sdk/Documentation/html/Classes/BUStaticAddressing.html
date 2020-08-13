@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BUStaticAddressing Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/dns1">dns1</option>
+		
+		<option value="//api/name/dns2">dns2</option>
+		
+		<option value="//api/name/gateway">gateway</option>
+		
+		<option value="//api/name/ip">ip</option>
+		
+		<option value="//api/name/netmask">netmask</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/initWithIp:netmask:gateway:dns1:">- initWithIp:netmask:gateway:dns1:</option>
+		
+		<option value="//api/name/initWithIp:netmask:gateway:dns1:dns2:">- initWithIp:netmask:gateway:dns1:dns2:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BUStaticAddressing Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td><a href="../Classes/BUNetworkAddressing.html">BUNetworkAddressing</a> : NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BUStaticAddressing.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Static addressing information for an imp</p>
+
+<p>The initializer is failable and may return nil if the strings are not valid IP addresses
+Strings can be validated using [BUNetworkManager isValidIpAddress:@&ldquo;String&rdquo;]</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initWithIp:netmask:gateway:dns1:" title="initWithIp:netmask:gateway:dns1:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIp:netmask:gateway:dns1:">&ndash;&nbsp;initWithIp:netmask:gateway:dns1:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provide static addressing information with a single DNS server</p>
+
+<p>All strings must be valid IPv4 addresses of form xxx.xxx.xxx.xxx</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithIp:(nonnull NSString *)<em>ip</em> netmask:(nonnull NSString *)<em>netmask</em> gateway:(nonnull NSString *)<em>gateway</em> dns1:(nonnull NSString *)<em>dns1</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ip</code></th>
+						<td><p>IP address desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>netmask</code></th>
+						<td><p>Netmask desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gateway</code></th>
+						<td><p>Gateway desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dns1</code></th>
+						<td><p>DNS address desired for the imp</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>nil if any strings are not valid IPs, a BUStaticAddressing object if data is valid</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initWithIp:netmask:gateway:dns1:dns2:" title="initWithIp:netmask:gateway:dns1:dns2:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initWithIp:netmask:gateway:dns1:dns2:">&ndash;&nbsp;initWithIp:netmask:gateway:dns1:dns2:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Provide static addressing information with two DNS servers</p>
+
+<p>All strings must be valid IPv4 addresses of form xxx.xxx.xxx.xxx</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (_Nullable instancetype)initWithIp:(nonnull NSString *)<em>ip</em> netmask:(nonnull NSString *)<em>netmask</em> gateway:(nonnull NSString *)<em>gateway</em> dns1:(nonnull NSString *)<em>dns1</em> dns2:(nullable NSString *)<em>dns2</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>ip</code></th>
+						<td><p>IP address desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>netmask</code></th>
+						<td><p>Netmask desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>gateway</code></th>
+						<td><p>Gateway desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dns1</code></th>
+						<td><p>DNS address desired for the imp</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>dns2</code></th>
+						<td><p>Second DNS address desired for the imp</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>nil if any strings are not valid IPs. A BUStaticAddressing object if data is valid.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/ip" title="ip"></a>
+	<h3 class="method-title"><code><a href="#//api/name/ip">&nbsp;&nbsp;ip</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>IP address desired for the imp</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, nonnull, readonly) NSString *ip</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/netmask" title="netmask"></a>
+	<h3 class="method-title"><code><a href="#//api/name/netmask">&nbsp;&nbsp;netmask</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Netmask desired for the imp</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, nonnull, readonly) NSString *netmask</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/gateway" title="gateway"></a>
+	<h3 class="method-title"><code><a href="#//api/name/gateway">&nbsp;&nbsp;gateway</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Gateway desired for the imp</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, nonnull, readonly) NSString *gateway</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dns1" title="dns1"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dns1">&nbsp;&nbsp;dns1</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>DNS address desired for the imp</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, nonnull, readonly) NSString *dns1</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/dns2" title="dns2"></a>
+	<h3 class="method-title"><code><a href="#//api/name/dns2">&nbsp;&nbsp;dns2</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Second DNS address desired for the imp, or nil if not set</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic, nullable, readonly) NSString *dns2</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUStaticAddressing.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

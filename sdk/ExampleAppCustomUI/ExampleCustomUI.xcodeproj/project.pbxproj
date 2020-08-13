@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2AC334AB175FD635004B1049 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334AA175FD635004B1049 /* UIKit.framework */; };
+		2AC334AD175FD635004B1049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334AC175FD635004B1049 /* Foundation.framework */; };
+		2AC334AF175FD635004B1049 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334AE175FD635004B1049 /* CoreGraphics.framework */; };
+		2AC334B5175FD635004B1049 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2AC334B3175FD635004B1049 /* InfoPlist.strings */; };
+		2AC334B7175FD635004B1049 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC334B6175FD635004B1049 /* main.m */; };
+		2AC334BC175FD635004B1049 /* EIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC334BB175FD635004B1049 /* EIAppDelegate.m */; };
+		2AC334C0175FD635004B1049 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC334BE175FD635004B1049 /* MainStoryboard.storyboard */; };
+		2AC334C7175FD635004B1049 /* EIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC334C6175FD635004B1049 /* EIViewController.m */; };
+		2AC334D0175FD86B004B1049 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334CF175FD86B004B1049 /* AVFoundation.framework */; };
+		2AC334D2175FD87F004B1049 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334D1175FD87F004B1049 /* OpenGLES.framework */; };
+		2AC334D4175FD887004B1049 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334D3175FD887004B1049 /* QuartzCore.framework */; };
+		2AC334D6175FD88E004B1049 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334D5175FD88E004B1049 /* Security.framework */; };
+		2AC334D8175FD893004B1049 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC334D7175FD893004B1049 /* SystemConfiguration.framework */; };
+		C86E639C1BB9F01200A5BEB7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E639B1BB9F01200A5BEB7 /* Launch Screen.storyboard */; };
+		C87CC7AD1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = C87CC7AC1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.m */; };
+		C88DF6921BBA39F600E3ED98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88DF6911BBA39F600E3ED98 /* Images.xcassets */; };
+		C8E565E0183C879D007A54A1 /* BlinkUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8E565DD183C879D007A54A1 /* BlinkUp.framework */; };
+		C8E565E1183C879D007A54A1 /* BlinkUp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C8E565DF183C879D007A54A1 /* BlinkUp.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2AC334A7175FD635004B1049 /* CustomUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AC334AA175FD635004B1049 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2AC334AC175FD635004B1049 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2AC334AE175FD635004B1049 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2AC334B2175FD635004B1049 /* ExampleCustomUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExampleCustomUI-Info.plist"; sourceTree = "<group>"; };
+		2AC334B4175FD635004B1049 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2AC334B6175FD635004B1049 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2AC334B8175FD635004B1049 /* ExampleCustomUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExampleCustomUI-Prefix.pch"; sourceTree = "<group>"; };
+		2AC334B9175FD635004B1049 /* PrecompiledGlobalUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrecompiledGlobalUtilities.h; sourceTree = "<group>"; };
+		2AC334BA175FD635004B1049 /* EIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EIAppDelegate.h; path = Source/EIAppDelegate.h; sourceTree = "<group>"; };
+		2AC334BB175FD635004B1049 /* EIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EIAppDelegate.m; path = Source/EIAppDelegate.m; sourceTree = "<group>"; };
+		2AC334C5175FD635004B1049 /* EIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EIViewController.h; path = Source/View/EIViewController.h; sourceTree = "<group>"; };
+		2AC334C6175FD635004B1049 /* EIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EIViewController.m; path = Source/View/EIViewController.m; sourceTree = "<group>"; };
+		2AC334CF175FD86B004B1049 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2AC334D1175FD87F004B1049 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2AC334D3175FD887004B1049 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2AC334D5175FD88E004B1049 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2AC334D7175FD893004B1049 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C86E639B1BB9F01200A5BEB7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C87CC7AB1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EIViewController+NonBlinkUpSpecific.h"; sourceTree = "<group>"; };
+		C87CC7AC1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EIViewController+NonBlinkUpSpecific.m"; sourceTree = "<group>"; };
+		C88DF6911BBA39F600E3ED98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C899F1BF2270C9690037BCA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		C8E565DD183C879D007A54A1 /* BlinkUp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BlinkUp.framework; sourceTree = "<group>"; };
+		C8E565DF183C879D007A54A1 /* BlinkUp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BlinkUp.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AC334A4175FD635004B1049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC334AB175FD635004B1049 /* UIKit.framework in Frameworks */,
+				C8E565E0183C879D007A54A1 /* BlinkUp.framework in Frameworks */,
+				2AC334AD175FD635004B1049 /* Foundation.framework in Frameworks */,
+				2AC334AF175FD635004B1049 /* CoreGraphics.framework in Frameworks */,
+				2AC334D0175FD86B004B1049 /* AVFoundation.framework in Frameworks */,
+				2AC334D2175FD87F004B1049 /* OpenGLES.framework in Frameworks */,
+				2AC334D4175FD887004B1049 /* QuartzCore.framework in Frameworks */,
+				2AC334D6175FD88E004B1049 /* Security.framework in Frameworks */,
+				2AC334D8175FD893004B1049 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2AC3349E175FD635004B1049 = {
+			isa = PBXGroup;
+			children = (
+				C8E565DC183C879D007A54A1 /* BlinkUp.embeddedframework */,
+				2AC334B0175FD635004B1049 /* ExampleCustomUI */,
+				2AC334A9175FD635004B1049 /* Frameworks */,
+				2AC334A8175FD635004B1049 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2AC334A8175FD635004B1049 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334A7175FD635004B1049 /* CustomUI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2AC334A9175FD635004B1049 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334CF175FD86B004B1049 /* AVFoundation.framework */,
+				2AC334AE175FD635004B1049 /* CoreGraphics.framework */,
+				2AC334AC175FD635004B1049 /* Foundation.framework */,
+				2AC334D1175FD87F004B1049 /* OpenGLES.framework */,
+				2AC334D3175FD887004B1049 /* QuartzCore.framework */,
+				2AC334D5175FD88E004B1049 /* Security.framework */,
+				2AC334D7175FD893004B1049 /* SystemConfiguration.framework */,
+				2AC334AA175FD635004B1049 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AC334B0175FD635004B1049 /* ExampleCustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334BA175FD635004B1049 /* EIAppDelegate.h */,
+				2AC334BB175FD635004B1049 /* EIAppDelegate.m */,
+				2AC334BD175FD635004B1049 /* Resources */,
+				2AC334C4175FD635004B1049 /* View */,
+				C88DF6911BBA39F600E3ED98 /* Images.xcassets */,
+				2AC334B1175FD635004B1049 /* Supporting Files */,
+			);
+			path = ExampleCustomUI;
+			sourceTree = "<group>";
+		};
+		2AC334B1175FD635004B1049 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334B2175FD635004B1049 /* ExampleCustomUI-Info.plist */,
+				2AC334B3175FD635004B1049 /* InfoPlist.strings */,
+				2AC334B6175FD635004B1049 /* main.m */,
+				2AC334B8175FD635004B1049 /* ExampleCustomUI-Prefix.pch */,
+				2AC334B9175FD635004B1049 /* PrecompiledGlobalUtilities.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2AC334BD175FD635004B1049 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334BE175FD635004B1049 /* MainStoryboard.storyboard */,
+				C86E639B1BB9F01200A5BEB7 /* Launch Screen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2AC334C4175FD635004B1049 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2AC334C5175FD635004B1049 /* EIViewController.h */,
+				2AC334C6175FD635004B1049 /* EIViewController.m */,
+				C87CC7AB1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.h */,
+				C87CC7AC1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C8E565DC183C879D007A54A1 /* BlinkUp.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				C8E565DD183C879D007A54A1 /* BlinkUp.framework */,
+				C8E565DE183C879D007A54A1 /* Resources */,
+			);
+			name = BlinkUp.embeddedframework;
+			path = ../BlinkUp/BlinkUp.embeddedframework;
+			sourceTree = "<group>";
+		};
+		C8E565DE183C879D007A54A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C8E565DF183C879D007A54A1 /* BlinkUp.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2AC334A6175FD635004B1049 /* ExampleCustomUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AC334CA175FD635004B1049 /* Build configuration list for PBXNativeTarget "ExampleCustomUI" */;
+			buildPhases = (
+				2AC334A3175FD635004B1049 /* Sources */,
+				2AC334A4175FD635004B1049 /* Frameworks */,
+				2AC334A5175FD635004B1049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExampleCustomUI;
+			productName = ExampleCustomUI;
+			productReference = 2AC334A7175FD635004B1049 /* CustomUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2AC3349F175FD635004B1049 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EI;
+				LastUpgradeCheck = 1020;
+			};
+			buildConfigurationList = 2AC334A2175FD635004B1049 /* Build configuration list for PBXProject "ExampleCustomUI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2AC3349E175FD635004B1049;
+			productRefGroup = 2AC334A8175FD635004B1049 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2AC334A6175FD635004B1049 /* ExampleCustomUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AC334A5175FD635004B1049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8E565E1183C879D007A54A1 /* BlinkUp.bundle in Resources */,
+				C88DF6921BBA39F600E3ED98 /* Images.xcassets in Resources */,
+				2AC334B5175FD635004B1049 /* InfoPlist.strings in Resources */,
+				2AC334C0175FD635004B1049 /* MainStoryboard.storyboard in Resources */,
+				C86E639C1BB9F01200A5BEB7 /* Launch Screen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2AC334A3175FD635004B1049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AC334B7175FD635004B1049 /* main.m in Sources */,
+				2AC334BC175FD635004B1049 /* EIAppDelegate.m in Sources */,
+				C87CC7AD1D006BBD009E8E8C /* EIViewController+NonBlinkUpSpecific.m in Sources */,
+				2AC334C7175FD635004B1049 /* EIViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2AC334B3175FD635004B1049 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2AC334B4175FD635004B1049 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2AC334BE175FD635004B1049 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C899F1BF2270C9690037BCA7 /* Base */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2AC334C8175FD635004B1049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AC334C9175FD635004B1049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2AC334CB175FD635004B1049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../BlinkUp",
+					"$(SRCROOT)/../BlinkUp/BlinkUp.embeddedframework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExampleCustomUI/ExampleCustomUI-Prefix.pch";
+				INFOPLIST_FILE = "ExampleCustomUI/ExampleCustomUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricimp.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = CustomUI;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2AC334CC175FD635004B1049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../BlinkUp",
+					"$(SRCROOT)/../BlinkUp/BlinkUp.embeddedframework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExampleCustomUI/ExampleCustomUI-Prefix.pch";
+				INFOPLIST_FILE = "ExampleCustomUI/ExampleCustomUI-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricimp.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = CustomUI;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2AC334A2175FD635004B1049 /* Build configuration list for PBXProject "ExampleCustomUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC334C8175FD635004B1049 /* Debug */,
+				2AC334C9175FD635004B1049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AC334CA175FD635004B1049 /* Build configuration list for PBXNativeTarget "ExampleCustomUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AC334CB175FD635004B1049 /* Debug */,
+				2AC334CC175FD635004B1049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2AC3349F175FD635004B1049 /* Project object */;
+}

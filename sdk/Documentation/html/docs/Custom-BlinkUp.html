@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Custom BlinkUp Document</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">Custom BlinkUp Document</h1>
+
+					<p>If the <a href="Basic-BlinkUp.html">Basic BlinkUp</a> process doesn’t meet your needs, you can customize the experience for your users. Customization involves using the various individual BlinkUp components directly. An overview of the process can be found on the <a href="../index.html">main documentation</a> page. Some of the concepts discussed here can be seen in the <em>ExampleCustomUI</em> example provided in the SDK bundle.</p>
+
+<p>The customized BlinkUp process will involve each of the following stages:</p>
+
+<ol>
+<li><a href="#network">Network Selection</a></li>
+<li><a href="#configId">Configuration ID</a></li>
+<li><a href="#flashing">Flashing</a></li>
+<li><a href="#polling">Polling</a></li>
+</ol>
+
+
+<p id="network">&nbsp;</p>
+
+
+<h2>Network Selection</h2>
+
+<p>During the BlinkUp process, your application will need a way to gather network credentials for the imp-based device you are configuring. The class you use to perform this action is called <a href="../Classes/BUNetworkSelectController.html">BUNetworkSelectController</a>. It will present the user with a list of known WiFi networks, as well as options to use WPS (WiFi Protected Setup) for configuration and to clear the configuration currently on the device. Due to limitiations of iOS, the interface will only show the name of the network the phone is currently connected to and any networks that the user has connected to and saved in the past. If you do not wish to use the standard network selection interface, you can <a href="#networkCustom">build your own</a> with help from the <a href="../Classes/BUNetworkManager.html">BUNetworkManager</a>.</p>
+
+<h3>Standard Network Selection</h3>
+
+<p>The following code snippet shows how you can present a standard network selection UI:</p>
+
+<pre><code>// 1. Create a new instance of a BUNetworkSelectController
+
+BUNetworkSelectController *networkSelect = [[BUNetworkSelectController alloc] init];
+
+// 2. Present the interface to the user
+
+[networkSelect presentInterfaceAnimated:NO completionHandler:^(BUNetworkConfig *networkConfig, BOOL userDidCancel) {
+  // 3. At this point your interface is back in control
+  // 4. If userDidCancel is true, no network or action was selected
+  // 5. If the user selected a network or action, the networkConfig object will
+  //    have the result and can be pass into a flash controller, or the properties
+  //    can be read directly after checking type (BUWifiConfig, BUWPSConfig, BUEthernetConfig, or BUNetworkConfig)
+}];
+</code></pre>
+
+<p id="networkCustom">&nbsp;</p>
+
+
+<h3>Custom Network Selection</h3>
+
+<p>The <a href="../Classes/BUNetworkManager.html">BUNetworkManager</a> can be used to do most of the heavy lifting for managing the user’s previous WiFi networks, if you prefer to build your own user interface. WiFi and WPS settings are passed to the SDK via <a href="../Classes/BUWifiConfig.html">BUWifiConfig</a> and <a href="../Classes/BUWPSConfig.html">BUWPSConfig</a>.</p>
+
+<p>If your connected product is based on the imp005 module and you intend it to connect by Ethernet only, there is no need to present a network selection screen and you can simply provide a <a href="../Classes/BUEthernetConfig.html">BUEthernetConfig</a> object &mdash; or pass in a <a href="../Classes/BUEthernetConfig.html">BUEthernetConfig</a> object if the user has chosen that means of connectivity in response to a request from your app.</p>
+
+<p>Most importantly, these objects have the ability to be saved to storage across launches.</p>
+
+<p><strong>Note</strong> The imp005 does not currently support WiFi configuration by WPS pin code.</p>
+
+<p>The following code snippet shows how you can access network data:</p>
+
+<pre><code>// 1. Retrieve a list of the iPhone's current WiFi network and all saved networks
+//    All objects are of type BUWifiConfig and the first object is the current network
+
+NSArray *wifiConfigs = [BUNetworkManager allWifiConfigs];
+
+// 2. Present your own interface to the user
+//    some awesome interface you develop
+
+// 3. After your interface is complete create a BUNetworkConfig (or sublass) to
+//    use for flashing the device
+
+BUNetworkConfig *clearConfig = [BUNetworkConfig clearNetworkConfig];
+BUWifiConfig *wifiConfig = [[BUWifiConfig alloc] initWithSSID:@"networkname" password:@"pass123"];
+BUWPSConfig *wpsConfig = [[BUWPSConfig alloc] initWithWPSPin:@"0430"];
+BUEthernetConfig *ethernetConfig = [[BUEthernetConfig alloc] init];
+</code></pre>
+
+<hr />
+
+<p id="configId">&nbsp;</p>
+
+
+<h2>Configuration ID</h2>
+
+<p>However you perform BlinkUp, you will need a <a href="../Classes/BUConfigId.html">BUConfigId</a> object. This is a combination of a one-time Enrollment Token and a Plan ID that is used to identify the device being configured to the impCloud&trade;. In order to generate a configuration ID, the impCloud must be contacted. When you create a <a href="../Classes/BUConfigId.html">BUConfigId</a> object with your API key, the object will asynchronously get a new <a href="../Classes/BUConfigId.html">BUConfigId</a> object that can be used to proceed with the BlinkUp. If the new <a href="../Classes/BUConfigId.html">BUConfigId</a> object is not retrieved, the BlinkUp process cannot continue.</p>
+
+<ul>
+<li>More information about the Plan ID can be found in the <a href="FAQ.html">FAQ</a>.</li>
+<li>If you are performing an external configuration (ie. non-flash), consult the <a href="https://electricimp.com/docs/api/imp/setenroltokens">imp API documentation</a> to learn how to transfer the configuration.</li>
+</ul>
+
+
+<p>The following code snippet shows how you to generate the configuration ID:</p>
+
+<pre><code>// 1. Create a new BUConfigId using your API key.
+//    Upon creation it will attempt to connect to the Eletric Imp Cloud and
+//    retrieve a new configuration ID (stored in a BUConfigId object)
+
+BUConfigId *configId = [[BUConfigId alloc] initWithApiKey:[self getAPIKey] completionHandler:^(BUConfigId *configId, NSError *error) {
+  // 2. Be sure to check for an error and inform the user
+  // 3. Use the now active configId to perform a flash or external configuration
+}];
+</code></pre>
+
+<hr />
+
+<p id="flashing">&nbsp;</p>
+
+
+<h2>Flashing</h2>
+
+<p>Flashing is the process of sending the network details and configuration ID from the phone or tablet to the imp-based device. The same process is used to clear the device’s existing network configuration, though in this instance a configuration ID object is not required. If the network configuration comprises either WiFi SSID and password credentials, a WPS PIN, or an Ethernet configuration, then a <a href="../Classes/BUDevicePoller.html">BUDevicePoller</a> will be returned.</p>
+
+<p>The following code snippet shows how to present the flash screen:</p>
+
+<pre><code>// 1. Create a new instance of a flash controller
+
+BUFlashController *flashController = [[BUFlashController alloc] init];
+
+// 2. Start the flashing process using the configId object (see 'Configuration ID', above)
+//    Upon completion the resignActive block will be called
+
+[flashController presentFlashWithNetworkConfig:wifiConfig configId:configId animated:YES resignActive:^(BOOL willRespond, BUDevicePoller *devicePoller, NSError *error) {
+  // 3. Be sure to check for an error and inform the user
+  // 4. If willRespond is true, a devicePoller will be created to retrieve deviceInfo
+  // 5. Use the devicePoller to retrieve information about the device
+}];
+</code></pre>
+
+<hr />
+
+<p id="Polling">&nbsp;</p>
+
+
+<h2>Polling</h2>
+
+<p>Polling is the process of querying the impCloud for information about the device that was just configured and should now be contacting the impCloud directly to gain authorization to connect. The <a href="../Classes/BUDevicePoller.html">BUDevicePoller</a> object will actively check to see if the device has connected. Polling does not start automatically.</p>
+
+<p>The following code snippet shows how to poll the impCloud:</p>
+
+<pre><code>// 1. The devicePoller is normally created by the BUFlashController (but it can be
+//    created manually if using an external configuration method)
+
+BUDevicePoller *devicePoller = devicePollerFromFlashControllerResignActiveBlock;
+
+[devicePoller startPollingWithCompletionHandler:^(BUDeviceInfo *deviceInfo, BOOL timedOut, NSError *error) {
+  // 3. Be sure to check for an error and inform the user
+  // 4. If timedOut is true the device did not connect within the pollTimeout period
+  // 5. If deviceInfo is not nil, it will contain information of the device that was configured
+}];
+</code></pre>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

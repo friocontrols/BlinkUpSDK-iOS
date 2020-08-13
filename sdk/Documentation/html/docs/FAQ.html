@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>FAQ Document</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Home</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">FAQ Document</h1>
+
+					<ul>
+<li><a href="#1">What is the difference between basic and custom BlinkUp?</a></li>
+<li><a href="#3">How does BlinkUp actually work?</a></li>
+<li><a href="#6">Why can’t I see logs for a device configured using the SDK?</a></li>
+<li><a href="#5">Why does it take so long to get an agent URL?</a></li>
+<li><a href="#7">What is a Plan ID?</a></li>
+<li><a href="#10">What is a Device ID?</a></li>
+<li><a href="#8">Why does the agent URL keep changing?</a></li>
+<li><a href="#9">What if I just want the same agent URL for this device, no matter what?</a></li>
+<li><a href="#11">How do I make sure the same user always gets the same agent URL for a device, across multiple BlinkUps?</a></li>
+<li><a href="#12">How do I set the planId?</a></li>
+</ul>
+
+
+<hr />
+
+<p id="1">&nbsp;</p>
+
+
+<h2>What is the difference between basic and custom BlinkUp?</h2>
+
+<p>The <a href="Basic-BlinkUp.html">basic Blinkup</a> allows the SDK to handle the entire BlinkUp process. It presents a simple UI which will allow the user to select which network they wish to connect to then transfer that choice to the device. You have the option to adjust much of the text throughout the process via the <a href="Text-Customization.html"><code>.strings</code> file</a> included with the SDK. The <em>ExampleApp</em> project template shows the basic BlinkUp in operation.</p>
+
+<p>If you feel you want more control over the look and feel of the BlinkUp process, you can do a <a href="Custom-BlinkUp.html">custom Blinkup</a> by using the individual BlinkUp components themselves. More information on this process can be found in the <em>ExampleAppCustomUI</em> project template.</p>
+
+<hr />
+
+<p id="3">&nbsp;</p>
+
+
+<h2>How does BlinkUp actually work?</h2>
+
+<p>These are the logical steps to perform a BlinkUp:</p>
+
+<ol>
+<li>Retrieve network information from the user.</li>
+<li>Gather an Enrolment Token (and Plan ID if not already held by the app) from the impCloud&trade;.</li>
+<li>Transmit the network information, Enrolment Token and Plan ID to the device by flashing the screen.</li>
+<li>The device receives the information and tries to connect first to the wireless network and then to the impCloud.</li>
+<li>The device sends the Enrolment Token to the impCloud.</li>
+<li>The SDK polls the impCloud to see if the device been authorized to access impCloud services.</li>
+</ol>
+
+
+<hr />
+
+<p id="6">&nbsp;</p>
+
+
+<h2>Why can’t I see logs for a device configured using the SDK?</h2>
+
+<p>When a device is configured using the SDK, it becomes associated with your production account rather than your developer account. This is why you are not able to see its logs in the IDE, which only shows development devices.</p>
+
+<p>There are two ways to view your logs during production testing:</p>
+
+<ol>
+<li><p>(Best Option) Handle logging internally by sending HTTP messages from the agent, rather than using the impOS API method <a href="https://electricimp.com/docs/api/server/log/">server.log()</a>.</p></li>
+<li><p>If you are still prototyping your device, use this temporary workaround: your developer account has a Plan ID associated with it. If you set the Plan ID in your app to be the same as the one associated with your developer account, the device will show up in the IDE. The Plan ID for your developer account can be obtained by emailing <a href="mailto:support@electricimp.com">support@electricimp.com</a> and requesting it. In your app, set the Plan ID when initializing the <a href="../Classes/BUBasicController.html">BUBasicController</a> or <a href="../Classes/BUConfigId.html">BUConfigId</a> objects. <strong>Be sure to remove your developer account Plan ID before releasing the application, otherwise users’ BlinkUp attempts will fail.</strong></p></li>
+</ol>
+
+
+<hr />
+
+<p id="5">&nbsp;</p>
+
+
+<h2>Why does it take so long to get an agent URL?</h2>
+
+<p>A URL is returned to the app so that it can access the configured device’s agent at that URL. If an issue occurs during the BlinkUp process, the agent URL may never be returned. In this case, the app will continue to poll untill the timeout period has elapsed and then call the completion block with its <em>timedOut</em> property set to <code>true</code>. The BlinkUp itself may fail for a number of reasons, including too much ambient light between the phone or tablet and the device; incorrect WiFi settings; and a failure to connect to the impCloud. You can change the default timeout by setting the property <a href="../Classes/BUDevicePoller.html#//api/name/pollTimeout">pollTimeout on the devicePoller object</a>, but be careful not to set too short a timeout until you know the cause of your connection failures.</p>
+
+<hr />
+
+<p id="7">&nbsp;</p>
+
+
+<h2>What is a Plan ID?</h2>
+
+<p>A Plan ID is a unique identifier generated when a specific user configures a device. You should store this Plan ID and reference it to identify that user, specifically if the user re-configures their device in future. If an existing user re-configures their device and you retrieve a new Plan ID for them, a new agent will be created to manage the device’s Internet connectivity. Data associated with the agent established when the device was first configured, such as device settings and preferences, will be lost.</p>
+
+<hr />
+
+<p><a name="10">&nbsp;</a></p>
+
+<h2>What is a Device ID?</h2>
+
+<p>A Device ID identifies a specific imp-enabled device. It is used identify which devices are connected to your developer account, as well as what application firmware a device should receive (its assigned model). You can view a development device’s Device ID in the IDE; production devices’ Device IDs can be gathered during the factory flow. The Device ID of a physical device never changes.</p>
+
+<hr />
+
+<p id="8">&nbsp;</p>
+
+
+<h2>Why does the agent URL keep changing?</h2>
+
+<p>An agent URL is derived from a device’s Device ID and the user’s Plan ID, and generated when the user first configures the device. If the same device is configured with the same Plan ID, the agent URL will be consistent. If either the Device ID or the Plan ID changes, a new agent URL will be generated and the previous agent URL associated with the Device ID will be invalidated.</p>
+
+<p>If you wish to manually set the Plan ID (ie. not generate a new one during initial configuration) the Plan ID must have been previously generated by the Electric Imp server. However, the Plan ID is intended to be unique per user. If you have a single user (George, for example), you should use the Plan ID generated for George every time he re-configures that device. It is the customer’s job to keep track of association between Plan ID and users.</p>
+
+<p>If you need to keep track of different devices, the Device ID should be used. You could also maintain a database of all generated agent URLs for a device.</p>
+
+<hr />
+
+<p><a name="9">&nbsp;</a></p>
+
+<h2>What if I just want the same agent URL for this device, no matter what?</h2>
+
+<p>This is not recommended. The reason we use Plan IDs is to ensure proper security. For example, a garage door opener that was controlled by an application that relied on a static agent URL for communication and control would allow previous owners of the device to continue to control the door, because they have the agent URL.</p>
+
+<p>Though you can get a static agent URL by passing in a constant Plan ID, this is not recommended beyond development use. Please spend some time architecting your use and management of agent URLs in your app and on your server. By developing a proper plan for the agent URL before launch you will avoid many security problems in the future.</p>
+
+<hr />
+
+<p><a name="11">&nbsp;</a></p>
+
+<h2>How do I make sure the same user always gets the same agent URL for a device, across multiple BlinkUps?</h2>
+
+<p>If a user has never configured a device:</p>
+
+<ol>
+<li>Generate a user ID for the user and store it on your own servers.</li>
+<li>When the user first performs a BlinkUp operation, the app should wait for the <a href="../Classes/BUDevicePoller.html">BUDevicePoller</a> to return with the <a href="../Classes/BUDeviceInfo.html">BUDeviceInfo</a>.</li>
+<li>Store the Plan ID obtained from the <a href="../Classes/BUDeviceInfo.html">BUDeviceInfo</a> on your server or within the app and associate it with the user ID.</li>
+</ol>
+
+
+<p>If a user has previously used BlinkUp to configure their device, you will have a Plan ID already associated with the user (this information is stored by you on your server on within the app):</p>
+
+<ol>
+<li>Pass in the stored Plan ID during the initialization of a <a href="../Classes/BUBasicController.html">BUBasicController</a> or <a href="../Classes/BUConfigId.html">BUConfigId</a>.</li>
+<li>Perform the BlinkUp.</li>
+<li>If the BlinkUp is successful (and the same device is used) you will get the same agent URL.</li>
+</ol>
+
+
+<hr />
+
+<p><a name="12">&nbsp;</a></p>
+
+<h2>How do I set the Plan ID?</h2>
+
+<p>If you are using the <a href="Basic-BlinkUp.html">basic Blinkup</a> process, use this initialization method: <em><a href="../Classes/BUBasicController.html">BUBasicController</a> initWithApiKey:planId:</em></p>
+
+<p>If you are using a <a href="Custom-BlinkUp.html">custom Blinkup</a> process, use this initialization method: <em><a href="../Classes/BUConfigId.html">BUConfigId</a> initWithApiKey:planId:completionHandler:</em></p>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

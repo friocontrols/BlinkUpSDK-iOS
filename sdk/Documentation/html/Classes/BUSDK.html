@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BUSDK Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/configure">+ configure</option>
+		
+		<option value="//api/name/configureWithFeatureCodes:apiKey:">+ configureWithFeatureCodes:apiKey:</option>
+		
+		<option value="//api/name/configureWithPrivateCloudHost:pinningDescriptions:">+ configureWithPrivateCloudHost:pinningDescriptions:</option>
+		
+		<option value="//api/name/configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:">+ configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:</option>
+		
+		<option value="//api/name/debugLogging">+ debugLogging</option>
+		
+		<option value="//api/name/isFeatureEnabled:">+ isFeatureEnabled:</option>
+		
+		<option value="//api/name/privateCloudHost">+ privateCloudHost</option>
+		
+		<option value="//api/name/resetToDefaults">+ resetToDefaults</option>
+		
+		<option value="//api/name/setDebugLogging:">+ setDebugLogging:</option>
+		
+		<option value="//api/name/sslPinningDescriptions">+ sslPinningDescriptions</option>
+		
+	</optgroup>
+	
+
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BUSDK Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BUSDK.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Configure the SDK for use</p>
+
+<p>The application should call one of the <a href="#//api/name/configure"><code>configure</code></a> methods during application launch.
+The most appropriate location is <code>application:didFinishLaunchingWithOptions:</code>
+Only a single <a href="#//api/name/configure">configure</a> method should be called per launch.
+Setting parameters affect the SDK application wide.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/configure" title="configure"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configure">+&nbsp;configure</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configure the BlinkUp SDK for standard usage</p>
+
+<p><strong>Note</strong> This method should be called during app initialization
+and must be be set before making any other BlinkUp calls</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)configure</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configureWithPrivateCloudHost:pinningDescriptions:" title="configureWithPrivateCloudHost:pinningDescriptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configureWithPrivateCloudHost:pinningDescriptions:">+&nbsp;configureWithPrivateCloudHost:pinningDescriptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configure the BlinkUp SDK to use a Private impCloud host and optional SSL Pinning</p>
+
+<p>If your device is connecting to a Private impCloud, you can set the hostname of
+your Private impCloud.</p>
+
+<p>In order to prevent MITM attacks and the use of ssl-proxies, it is strongly recommended
+that you <a href="#//api/name/configure">configure</a> the pinning descriptions for the host.</p>
+
+<p><strong>Note</strong> This method should be called during app initialization
+and must be be set before making any other BlinkUp calls</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)configureWithPrivateCloudHost:(NSString *)<em>privateCloudHost</em> pinningDescriptions:(NSArray&lt;BUPinningDescription*&gt; *)<em>sslPinningDescriptions</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>privateCloudHost</code></th>
+						<td><p>Server host to connect to such as <code>api.electricimp.com</code></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sslPinningDescriptions</code></th>
+						<td><p>SSL Pinning Description. Pass in an empty array for no pinning</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:" title="configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:">+&nbsp;configureWithPrivateCloudHost:pinningDescriptions:featureCodes:apiKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configure the BlinkUp SDK to use a Private impCloud host and optional SSL Pinning with additional features.</p>
+
+<p>If your device is connecting to a Private impCloud, you can set the hostname of
+your Private impCloud.</p>
+
+<p>In order to prevent MITM attacks and the use of ssl-proxies, it is strongly recommended
+that you <a href="#//api/name/configure">configure</a> the pinning descriptions for the host.</p>
+
+<p>If you require extra features when using the SDK, you can enable them here
+with the feature codes provided by Electric Imp. The feature codes are
+specific to your API Key. During initial configuration, it is good practice
+to examine the return list to ensure all the features you will change are
+enabled.</p>
+
+<p><strong>Note</strong> This method should be called during app initialization
+and must be be set before making any other BlinkUp calls</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *)configureWithPrivateCloudHost:(NSString *)<em>privateCloudHost</em> pinningDescriptions:(NSArray&lt;BUPinningDescription*&gt; *)<em>sslPinningDescriptions</em> featureCodes:(NSArray&lt;NSString*&gt; *)<em>featureCodes</em> apiKey:(NSString *)<em>apiKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>privateCloudHost</code></th>
+						<td><p>Server host to connect to such as <code>api.electricimp.com</code></p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>sslPinningDescriptions</code></th>
+						<td><p>SSL Pinning Description. Pass in an empty array for no pinning</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>featureCodes</code></th>
+						<td><p>All of the features codes that should be enabled</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The API Key assigned to you from Electric Imp</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The list of feature names that were enabled</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/configureWithFeatureCodes:apiKey:" title="configureWithFeatureCodes:apiKey:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/configureWithFeatureCodes:apiKey:">+&nbsp;configureWithFeatureCodes:apiKey:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Configure the BlinkUp SDK and enabled extra feature SDK wide</p>
+
+<p>If you require extra features when using the SDK, you can enable them here
+with the feature codes provided by Electric Imp. The feature codes are
+specific to your API Key. During initial configuration, it is good practice
+to examine the return list to ensure all the features you will change are
+enabled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;NSString*&gt; *)configureWithFeatureCodes:(NSArray&lt;NSString*&gt; *)<em>featureCodes</em> apiKey:(NSString *)<em>apiKey</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>featureCodes</code></th>
+						<td><p>All of the features codes that should be enabled</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>apiKey</code></th>
+						<td><p>The API Key assigned to you from Electric Imp</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>The list of feature names that were enabled</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/resetToDefaults" title="resetToDefaults"></a>
+	<h3 class="method-title"><code><a href="#//api/name/resetToDefaults">+&nbsp;resetToDefaults</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Reset the SDK to use defaults. This should only be needed during testing</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)resetToDefaults</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isFeatureEnabled:" title="isFeatureEnabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isFeatureEnabled:">+&nbsp;isFeatureEnabled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if a feature has been enabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isFeatureEnabled:(NSString *)<em>featureName</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>featureName</code></th>
+						<td><p>Name of the feature to check</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p><code>true</code> if the feature is enabled</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/privateCloudHost" title="privateCloudHost"></a>
+	<h3 class="method-title"><code><a href="#//api/name/privateCloudHost">+&nbsp;privateCloudHost</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The hostname of the Private impCloud</p>
+
+<p>This value is used as the hostname when retrieving plans, tokens and
+BlinkUp results. Nil is returned by default, which indicates that
+the SDK should use the default Electric Imp URL.</p>
+
+<p>Note: This feature must be be set before making any other BlinkUp calls</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSString *_Nullable)privateCloudHost</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Nil if not set or the override base URL string</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/sslPinningDescriptions" title="sslPinningDescriptions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/sslPinningDescriptions">+&nbsp;sslPinningDescriptions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>SSL Pinning Descriptions for server communication</p>
+
+<p>When connecting to the server, the API will validate that the anchoring
+certificate (the root) has a proper hostname and SPKI data.
+The SSL Pinning is done in order to provide an extra layer of security.
+If the value is nil, pinning will be turned off.</p>
+
+<p><strong>Note</strong> This feature must be be set before making any other BlinkUp calls</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (NSArray&lt;BUPinningDescription*&gt; *_Nullable)sslPinningDescriptions</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Nil or empty if any cert is allowed, or the value that must match the certificate</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDebugLogging:" title="setDebugLogging:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDebugLogging:">+&nbsp;setDebugLogging:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Allow debug logs to be generated (may contain sensitive information).</p>
+
+<p>Note: This should not be enabled for release builds</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setDebugLogging:(BOOL)<em>debugLogging</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>debugLogging</code></th>
+						<td><p>Bool indicating if <a href="#//api/name/debugLogging">debugLogging</a> should be enabled</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/debugLogging" title="debugLogging"></a>
+	<h3 class="method-title"><code><a href="#//api/name/debugLogging">+&nbsp;debugLogging</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if the debug logging is enabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)debugLogging</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>State of debug Logging</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if the debug logging is enabled</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BUSDK.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BlinkUp Reference</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="index.html">BlinkUp </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="https://developer.electricimp.com">Electric Imp Dev Center</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hierarchy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BlinkUp Reference</h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<p>In order to connect an imp-enabled device to the Electric Imp impCloud&trade;, it must be configured with local wireless credentials, an Enrolment Token and a Plan ID. The process of gathering this information from the user and configuring the device is know as BlinkUp&trade;. BlinkUp can be accomplished in a number of ways with varying levels of customization. The simplest way to configure a device using BlinkUp is to use the <a href="Classes/BUBasicController.html">BUBasicController</a> class, which provides a standard user interface for the user. If you wish to customize the user experience, you can use the lower-level classes from the SDK.</p>
+
+<p>The Electric Imp iOS BlinkUp SDK supports iOS 8 and up. The latest release is version 20.0.1.</p>
+
+<p>The BlinkUp process can be broken into four steps:</p>
+
+<ol>
+<li>Network selection</li>
+<li>Setup configuration and identification gathering</li>
+<li>Flashing the device</li>
+<li>Polling the server for the device information</li>
+</ol>
+
+
+<div style="text-align:center"><img src="docs/files/BlinkUpFlow.png" /></div>
+
+
+<h2>Network Selection</h2>
+
+<p>Network selection is the process of gathering network information from the user. When presented with the network selection UI, the user will be able to enter a WiFi SSID and password, or enter a WPS PIN. The user may also clear a device of its current configuration. The user can cancel and return to the previous UI without selecting an action to perform. When implementing a custom BlinkUp, you can use the <a href="Classes/BUNetworkSelectController.html">BUNetworkSelectController</a> to perform this operation.</p>
+
+<h2>Configuration ID</h2>
+
+<p>The configuration ID combines all the device identification information needed for device authorization. It is required when connecting a device to the impCloud, but it is not needed when clearing a device of previously installed configuration data. A configuration ID contains two parts: an Enrolment Token and a Plan ID. The Enrolment Token is retrieved from the impCloud when creating a <a href="Classes/BUConfigId.html">BUConfigId</a>. The Plan ID can be passed in from your app or retrieved from the impCloud along with the Enrolment Token.</p>
+
+<h2>Flashing</h2>
+
+<p>Flashing is the process of sending information from the phone or tablet to the imp-enabled device via a series of screen flashes. When flashing using WPS, a <a href="Classes/BUWPSConfig.html">BUWPSConfig</a> and a <a href="Classes/BUConfigId.html">BUConfigId</a> need to be passed in to begin the flash. When flashing using WiFi credentials, a <a href="Classes/BUWifiConfig.html">BUWifiConfig</a> and a <a href="Classes/BUConfigId.html">BUConfigId</a> are needed. When clearing the configuration of a device a <a href="Classes/BUNetworkConfig.html">BUNetworkConfig</a> is needed. Flashing is performed by the <a href="Classes/BUFlashController.html">BUFlashController</a>.</p>
+
+<p>When flashing an imp005-based device to connect <em>solely</em> through Ethernet, a <a href="Classes/BUEthernetConfig.html">BUEthernetConfig</a> and a <a href="Classes/BUConfigId.html">BUConfigId</a> are needed. If the device can use either WiFi or Ethernet, pass a <a href="Classes/BUWPSConfig.html">BUWPSConfig</a> and a <a href="Classes/BUConfigId.html">BUConfigId</a> &mdash; the device will then connect to the specified WiFi network if it is not physically connected to a wired network. The imp005 module does not currently support WPS. The imp005 is the only imp module with Ethernet support &mdash; all other imp modules connect by WiFi/WPS.</p>
+
+<h2>Polling</h2>
+
+<p>Polling is the process of retrieving device information after a flash. It is not needed during a clear-configuration operation. The polling process checks the impCloud for information about that device. Either the device connects to the impCloud, is successfully enrolled, and its information is successfully retrieved by the SDK, or the polling will fail after a timeout period. Polling is performed using a <a href="Classes/BUDevicePoller.html">BUDevicePoller</a> object created during the process of flashing.</p>
+
+<h2>Additional Notes</h2>
+
+<h3>Swift Support</h3>
+
+<p>The SDK can be used in a Swift program. A few optional extensions are provided to wrap some of the large block method parameters. More information about Swift setup can be found in the <a href="docs/Install-Guide.html">Install Guide</a></p>
+
+<h3>BlinkUp Success During Rotation</h3>
+
+<p>Rotating an iOS device during BlinkUp can reduce the odds of a successful BlinkUp being achieved. It is <strong>strongly</strong> recommended that you implement the following:</p>
+
+<ul>
+<li><p>Ensure that your application has “Requires full screen” set to <code>true</code> for the application Target -> General setting.</p></li>
+<li><p>The view controller that presents the BlinkUp, the RootViewController, and any container controllers (such as UINavigationController, UISplitViewController, etc) should implement the <em>shouldAutorotate</em> method and return the value acquired from <a href="Classes/BUHelper.html#//api/name/shouldAutorotate"><code>[BUHelper shouldAutorotate]</code></a>. If the interface is rotated while the BlinkUp interface is presented the status bar and or presenting interface may become out of sync with the device orientation. To counteract this issue, the presenting view controller can call the <a href="Classes/BUHelper.html">BUHelper</a> method <em>fixRotationForViewController:</em> after the flash process has completed.<br>&nbsp;<br>During the flash process the status bar may or may not appear. If the application’s <code>info.plist</code> has “View controller-based status bar appearance” set to <code>YES</code>, the status bar will not be visible, otherwise it will use the preference of your application.</p></li>
+</ul>
+
+
+<h3>Promises</h3>
+
+<p>Due to the asynchronous nature of the BlinkUp process, it may be useful to use a promise library when not using the <a href="Classes/BUBasicController.html">BUBasicController</a>.</p>
+
+<h3>Advanced Features</h3>
+
+<p>The imp001 through the imp004m are able to communicate solely by WiFi. The imp005 also supports Ethernet. impOS release 34 and up support the application of static network configurations and connection through HTTP CONNECT proxy servers. To make use of these advanced features, you will need to integrate BlinkUp into your app through the SDK’s <a href="docs/Custom-BlinkUp.html">customization mechanism</a>. They are not supported by the <a href="docs/Basic-BlinkUp.html">standard interface</a>.</p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+						<div class="index-column">
+							<h2 class="index-title">Programming Guides</h2>
+							<ul>
+								
+								<li><a href="docs/Basic-BlinkUp.html">Basic BlinkUp</a></li>
+								
+								<li><a href="docs/Custom-BlinkUp.html">Custom BlinkUp</a></li>
+								
+								<li><a href="docs/FAQ.html">FAQ</a></li>
+								
+								<li><a href="docs/Install-Guide.html">Install Guide</a></li>
+								
+								<li><a href="docs/Private-Cloud-Host.html">Private Cloud Host</a></li>
+								
+								<li><a href="docs/Release-Notes.html">Release Notes</a></li>
+								
+								<li><a href="docs/Text-Customization.html">Text Customization</a></li>
+								
+								<li><a href="docs/Version-Migration.html">Version Migration</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title">Class References</h2>
+							<ul>
+								
+								<li><a href="Classes/BUBasicController.html">BUBasicController</a></li>
+								
+								<li><a href="Classes/BUConfigId.html">BUConfigId</a></li>
+								
+								<li><a href="Classes/BUDHCPAddressing.html">BUDHCPAddressing</a></li>
+								
+								<li><a href="Classes/BUDeviceInfo.html">BUDeviceInfo</a></li>
+								
+								<li><a href="Classes/BUDevicePoller.html">BUDevicePoller</a></li>
+								
+								<li><a href="Classes/BUErrorStringParameters.html">BUErrorStringParameters</a></li>
+								
+								<li><a href="Classes/BUEthernetConfig.html">BUEthernetConfig</a></li>
+								
+								<li><a href="Classes/BUFlashController.html">BUFlashController</a></li>
+								
+								<li><a href="Classes/BUFlashStringParameters.html">BUFlashStringParameters</a></li>
+								
+								<li><a href="Classes/BUHelper.html">BUHelper</a></li>
+								
+								<li><a href="Classes/BUNetworkAddressing.html">BUNetworkAddressing</a></li>
+								
+								<li><a href="Classes/BUNetworkConfig.html">BUNetworkConfig</a></li>
+								
+								<li><a href="Classes/BUNetworkManager.html">BUNetworkManager</a></li>
+								
+								<li><a href="Classes/BUNetworkProxy.html">BUNetworkProxy</a></li>
+								
+								<li><a href="Classes/BUNetworkSelectController.html">BUNetworkSelectController</a></li>
+								
+								<li><a href="Classes/BUNetworkSelectStringParameters.html">BUNetworkSelectStringParameters</a></li>
+								
+								<li><a href="Classes/BUPinningDescription.html">BUPinningDescription</a></li>
+								
+								<li><a href="Classes/BUPinningSPKIData.html">BUPinningSPKIData</a></li>
+								
+								<li><a href="Classes/BUSDK.html">BUSDK</a></li>
+								
+								<li><a href="Classes/BUStaticAddressing.html">BUStaticAddressing</a></li>
+								
+								<li><a href="Classes/BUWPSConfig.html">BUWPSConfig</a></li>
+								
+								<li><a href="Classes/BUWifiConfig.html">BUWifiConfig</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+
+							
+							<h2 class="index-title">Constant References</h2>
+							<ul>
+								
+									<li><a href="Constants/BUPublicKeyAlgorithm.html">BUPublicKeyAlgorithm</a></li>
+								
+									<li><a href="Constants/BlinkUpError.html">BlinkUpError</a></li>
+								
+							</ul>
+							
+
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2020 Twilio. All rights reserved. Updated: 2020-07-07</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>
