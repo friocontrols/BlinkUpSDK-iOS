@@ -30,7 +30,7 @@ To learn how to add the BlinkUp SDK files to your app project, please see the re
 
 ## Release Notes and Known Issues ##
 
-Please see the [Dev Center SDK page](https://developer.electricimp.com/manufacturing/sdkdocs), or the [SDK documentation in this repo](./sdk/Documentation).
+Please see the [Dev Center SDK page](https://developer.electricimp.com/manufacturing/sdkdocs), or the [SDK documentation in this repo](./sdk/Documentation/html).
 
 ## Pull Requests ##
 
